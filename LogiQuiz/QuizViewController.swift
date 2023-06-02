@@ -13,8 +13,6 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var quizTextView: UITextView!
     @IBOutlet weak var answerButton1: UIButton!
     @IBOutlet weak var answerButton2: UIButton!
-    @IBOutlet weak var answerButton3: UIButton!
-    @IBOutlet weak var answerButton4: UIButton!
     @IBOutlet weak var judgeImageView: UIImageView!
 
 
@@ -37,17 +35,11 @@ class QuizViewController: UIViewController {
         quizTextView.text = quizArrey[0]
         answerButton1.setTitle(quizArrey[2], for: .normal)
         answerButton2.setTitle(quizArrey[3], for: .normal)
-        answerButton3.setTitle(quizArrey[4], for: .normal)
-        answerButton4.setTitle(quizArrey[5], for: .normal)
 
         answerButton1.layer.borderWidth = 2
         answerButton1.layer.borderColor = UIColor.black.cgColor
         answerButton2.layer.borderWidth = 2
         answerButton2.layer.borderColor = UIColor.black.cgColor
-        answerButton3.layer.borderWidth = 2
-        answerButton3.layer.borderColor = UIColor.black.cgColor
-        answerButton4.layer.borderWidth = 2
-        answerButton4.layer.borderColor = UIColor.black.cgColor
         // Do any additional setup after loading the view.
     }
 
@@ -70,14 +62,10 @@ class QuizViewController: UIViewController {
         judgeImageView.isHidden = false
         answerButton1.isEnabled = false
         answerButton2.isEnabled = false
-        answerButton3.isEnabled = false
-        answerButton4.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.judgeImageView.isHidden = true
             self.answerButton1.isEnabled = true
             self.answerButton2.isEnabled = true
-            self.answerButton3.isEnabled = true
-            self.answerButton4.isEnabled = true
             self.nextQuiz()
         }
     }
@@ -90,8 +78,6 @@ class QuizViewController: UIViewController {
             quizTextView.text = quizArrey[0]
             answerButton1.setTitle(quizArrey[2], for: .normal)
             answerButton2.setTitle(quizArrey[3], for: .normal)
-            answerButton3.setTitle(quizArrey[4], for: .normal)
-            answerButton4.setTitle(quizArrey[5], for: .normal)
         } else {
             performSegue(withIdentifier: "toScoreVC", sender: nil)
         }

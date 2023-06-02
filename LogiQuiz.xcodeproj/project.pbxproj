@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A85D92A2A52920056198F /* QuizViewController.swift */; };
 		D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FECE2A14D18F00802417 /* Quiz1.csv */; };
 		D719FED12A1527A500802417 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = D719FED02A1527A400802417 /* correct.png */; };
 		D719FED32A1528A400802417 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D719FED22A1528A300802417 /* incorrect.png */; };
-		D719FED52A152B4600802417 /* SelectLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719FED42A152B4500802417 /* SelectLevelViewController.swift */; };
+		D719FED52A152B4600802417 /* SelectPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719FED42A152B4500802417 /* SelectPartViewController.swift */; };
 		D719FED72A152F7000802417 /* Quiz2.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FED62A152F7000802417 /* Quiz2.csv */; };
 		D719FED92A1531B000802417 /* Quiz3.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FED82A1531B000802417 /* Quiz3.csv */; };
 		D7320A7B2A137D91000D605C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7A2A137D91000D605C /* AppDelegate.swift */; };
@@ -19,19 +20,19 @@
 		D7320A822A137D91000D605C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A802A137D91000D605C /* Main.storyboard */; };
 		D7320A842A137D97000D605C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7320A832A137D97000D605C /* Assets.xcassets */; };
 		D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A852A137D97000D605C /* LaunchScreen.storyboard */; };
-		D7320A8F2A138012000D605C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A8E2A138012000D605C /* QuizViewController.swift */; };
 		D7320A912A138107000D605C /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A902A138107000D605C /* ScoreViewController.swift */; };
 		D78ABED52A25E66700FEB6E0 /* launchImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = D78ABED42A25E66700FEB6E0 /* launchImageView.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D70A85D92A2A52920056198F /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D719FECE2A14D18F00802417 /* Quiz1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz1.csv; sourceTree = "<group>"; };
 		D719FED02A1527A400802417 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
 		D719FED22A1528A300802417 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
-		D719FED42A152B4500802417 /* SelectLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevelViewController.swift; sourceTree = "<group>"; };
+		D719FED42A152B4500802417 /* SelectPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPartViewController.swift; sourceTree = "<group>"; };
 		D719FED62A152F7000802417 /* Quiz2.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz2.csv; sourceTree = "<group>"; };
 		D719FED82A1531B000802417 /* Quiz3.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz3.csv; sourceTree = "<group>"; };
-		D7320A772A137D91000D605C /*  SampleQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = " SampleQuiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7320A772A137D91000D605C /* LogiQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogiQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7320A7A2A137D91000D605C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7320A7C2A137D91000D605C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7320A7E2A137D91000D605C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		D7320A832A137D97000D605C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7320A862A137D97000D605C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7320A882A137D97000D605C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7320A8E2A138012000D605C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D7320A902A138107000D605C /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		D78ABED42A25E66700FEB6E0 /* launchImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImageView.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +58,7 @@
 		D7320A6E2A137D91000D605C = {
 			isa = PBXGroup;
 			children = (
-				D7320A792A137D91000D605C /* SampleQuiz */,
+				D7320A792A137D91000D605C /* LogiQuiz */,
 				D7320A782A137D91000D605C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,20 +66,20 @@
 		D7320A782A137D91000D605C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7320A772A137D91000D605C /*  SampleQuiz.app */,
+				D7320A772A137D91000D605C /* LogiQuiz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D7320A792A137D91000D605C /* SampleQuiz */ = {
+		D7320A792A137D91000D605C /* LogiQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				D70A85D92A2A52920056198F /* QuizViewController.swift */,
 				D7320A7A2A137D91000D605C /* AppDelegate.swift */,
 				D7320A7C2A137D91000D605C /* SceneDelegate.swift */,
 				D7320A7E2A137D91000D605C /* ViewController.swift */,
 				D7320A802A137D91000D605C /* Main.storyboard */,
-				D719FED42A152B4500802417 /* SelectLevelViewController.swift */,
-				D7320A8E2A138012000D605C /* QuizViewController.swift */,
+				D719FED42A152B4500802417 /* SelectPartViewController.swift */,
 				D7320A902A138107000D605C /* ScoreViewController.swift */,
 				D719FECE2A14D18F00802417 /* Quiz1.csv */,
 				D719FED62A152F7000802417 /* Quiz2.csv */,
@@ -91,7 +91,7 @@
 				D719FED22A1528A300802417 /* incorrect.png */,
 				D78ABED32A25E66700FEB6E0 /* launchImage */,
 			);
-			path = SampleQuiz;
+			path = LogiQuiz;
 			sourceTree = "<group>";
 		};
 		D78ABED32A25E66700FEB6E0 /* launchImage */ = {
@@ -105,9 +105,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D7320A762A137D91000D605C /*  SampleQuiz */ = {
+		D7320A762A137D91000D605C /* LogiQuiz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7320A8B2A137D97000D605C /* Build configuration list for PBXNativeTarget " SampleQuiz" */;
+			buildConfigurationList = D7320A8B2A137D97000D605C /* Build configuration list for PBXNativeTarget "LogiQuiz" */;
 			buildPhases = (
 				D7320A732A137D91000D605C /* Sources */,
 				D7320A742A137D91000D605C /* Frameworks */,
@@ -117,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = " SampleQuiz";
+			name = LogiQuiz;
 			productName = LogiQuiz;
-			productReference = D7320A772A137D91000D605C /*  SampleQuiz.app */;
+			productReference = D7320A772A137D91000D605C /* LogiQuiz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +137,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D7320A722A137D91000D605C /* Build configuration list for PBXProject " SampleQuiz" */;
+			buildConfigurationList = D7320A722A137D91000D605C /* Build configuration list for PBXProject "LogiQuiz" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -150,7 +150,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D7320A762A137D91000D605C /*  SampleQuiz */,
+				D7320A762A137D91000D605C /* LogiQuiz */,
 			);
 		};
 /* End PBXProject section */
@@ -182,9 +182,9 @@
 				D7320A7F2A137D91000D605C /* ViewController.swift in Sources */,
 				D7320A7B2A137D91000D605C /* AppDelegate.swift in Sources */,
 				D7320A912A138107000D605C /* ScoreViewController.swift in Sources */,
+				D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */,
 				D7320A7D2A137D91000D605C /* SceneDelegate.swift in Sources */,
-				D7320A8F2A138012000D605C /* QuizViewController.swift in Sources */,
-				D719FED52A152B4600802417 /* SelectLevelViewController.swift in Sources */,
+				D719FED52A152B4600802417 /* SelectPartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C23S8P6RSS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleQuiz/Info.plist;
+				INFOPLIST_FILE = LogiQuiz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = Light;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -345,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.SampleQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.LogiQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -365,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C23S8P6RSS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleQuiz/Info.plist;
+				INFOPLIST_FILE = LogiQuiz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = Light;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -377,7 +377,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.SampleQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.LogiQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -391,7 +391,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D7320A722A137D91000D605C /* Build configuration list for PBXProject " SampleQuiz" */ = {
+		D7320A722A137D91000D605C /* Build configuration list for PBXProject "LogiQuiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7320A892A137D97000D605C /* Debug */,
@@ -400,7 +400,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7320A8B2A137D97000D605C /* Build configuration list for PBXNativeTarget " SampleQuiz" */ = {
+		D7320A8B2A137D97000D605C /* Build configuration list for PBXNativeTarget "LogiQuiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7320A8C2A137D97000D605C /* Debug */,

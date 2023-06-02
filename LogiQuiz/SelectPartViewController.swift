@@ -1,33 +1,33 @@
 //
 //  SelectLevelViewController.swift
-//   SampleQuiz
+//  SampleQuiz
 //
 //  Created by KentoFujita on 2023/05/18.
 //
 
 import UIKit
 
-class SelectLevelViewController: UIViewController {
+class SelectPartViewController: UIViewController {
 
 
-    @IBOutlet weak var level1Button: UIButton!
+    @IBOutlet weak var part1Button: UIButton!
 
-    @IBOutlet weak var level2Button: UIButton!
+    @IBOutlet weak var part2Button: UIButton!
 
 
-    @IBOutlet weak var level3Button: UIButton!
+    @IBOutlet weak var part3Button: UIButton!
     var selectTag = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        level1Button.layer.borderWidth = 2
-        level1Button.layer.borderColor = UIColor.black.cgColor
-        level2Button.layer.borderWidth = 2
-        level2Button.layer.borderColor = UIColor.black.cgColor
-        level3Button.layer.borderWidth = 2
-        level3Button.layer.borderColor = UIColor.black.cgColor
+        part1Button.layer.borderWidth = 2
+        part1Button.layer.borderColor = UIColor.black.cgColor
+        part2Button.layer.borderWidth = 2
+        part2Button.layer.borderColor = UIColor.black.cgColor
+        part3Button.layer.borderWidth = 2
+        part3Button.layer.borderColor = UIColor.black.cgColor
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
@@ -35,7 +35,7 @@ class SelectLevelViewController: UIViewController {
         quizVC.selectLebel = selectTag
     }
 
-    @IBAction func levelButtonAction(sender:UIButton) {
+    @IBAction func PartButtonAction(sender:UIButton) {
         print(sender.tag)
         selectTag = sender.tag
         performSegue(withIdentifier: "toQuizVC", sender: nil)
