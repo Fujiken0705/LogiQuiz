@@ -32,7 +32,7 @@ class SelectPartViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
         let quizVC = segue.destination as! QuizViewController
-        quizVC.selectLebel = selectTag
+        quizVC.selectLevel = selectTag
     }
 
     @IBAction func PartButtonAction(sender:UIButton) {
