@@ -16,11 +16,12 @@ class ScoreViewController: UIViewController {
 
 
     var correct = 0
+    var questionnum = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scoreLabel.text = "\(correct)問正解！"
+        scoreLabel.text = "\(questionnum)問中、\(correct)問正解！"
 
         shareButton.layer.borderWidth = 2
         shareButton.layer.borderColor = UIColor.black.cgColor
@@ -31,7 +32,7 @@ class ScoreViewController: UIViewController {
     }
 
     @IBAction func shareButtonAction(_ sender: Any) {
-        let activityItems = ["\(correct)問正解しました。","クイズアプリ"]
+        let activityItems = ["\(questionnum)問中、\(correct)問正解しました。","クイズアプリ"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC,animated:true)
     }
