@@ -20,14 +20,13 @@ class QuizViewController: UIViewController {
     var quizArrey: [String] = []
     var quizCount = 0
     var correctCount = 0
-    var selectLebel = 0
+    var selectLevel = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("選択したのはレベル\(selectLevel)")
 
-        print("選択したのはレベル\(selectLebel)")
-
-        csvArrey = loadCSV(filename: "Quiz\(selectLebel)")
+        csvArrey = loadCSV(filename: "Quiz\(selectLevel)")
 
         csvArrey.shuffle()
         quizArrey = csvArrey[quizCount].components(separatedBy: ",")
@@ -40,13 +39,13 @@ class QuizViewController: UIViewController {
         answerButton1.layer.borderColor = UIColor.black.cgColor
         answerButton2.layer.borderWidth = 2
         answerButton2.layer.borderColor = UIColor.black.cgColor
-        // Do any additional setup after loading the view.
     }
 
     //QuizViewの正解数をScoreViewに受け渡す
     override func prepare(for segue:UIStoryboardSegue, sender:Any?) {
         let scoreVC = segue.destination as! ScoreViewController
         scoreVC.correct = correctCount
+        scoreVC.questionnum = quizCount
     }
 
     @IBAction func btnAction(sender : UIButton) {
@@ -74,7 +73,7 @@ class QuizViewController: UIViewController {
         quizCount += 1
         if quizCount < csvArrey.count{
             quizArrey = csvArrey[quizCount].components(separatedBy: ",")
-            quizNumberLabel.text = "第\(quizCount)問"
+            quizNumberLabel.text = "第\(quizCount + 1)問"
             quizTextView.text = quizArrey[0]
             answerButton1.setTitle(quizArrey[2], for: .normal)
             answerButton2.setTitle(quizArrey[3], for: .normal)

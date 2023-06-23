@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A85D92A2A52920056198F /* QuizViewController.swift */; };
 		D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FECE2A14D18F00802417 /* Quiz1.csv */; };
-		D719FED12A1527A500802417 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = D719FED02A1527A400802417 /* correct.png */; };
-		D719FED32A1528A400802417 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D719FED22A1528A300802417 /* incorrect.png */; };
 		D719FED52A152B4600802417 /* SelectPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719FED42A152B4500802417 /* SelectPartViewController.swift */; };
 		D719FED72A152F7000802417 /* Quiz2.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FED62A152F7000802417 /* Quiz2.csv */; };
 		D719FED92A1531B000802417 /* Quiz3.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FED82A1531B000802417 /* Quiz3.csv */; };
@@ -21,14 +19,13 @@
 		D7320A842A137D97000D605C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7320A832A137D97000D605C /* Assets.xcassets */; };
 		D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A852A137D97000D605C /* LaunchScreen.storyboard */; };
 		D7320A912A138107000D605C /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A902A138107000D605C /* ScoreViewController.swift */; };
-		D78ABED52A25E66700FEB6E0 /* launchImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = D78ABED42A25E66700FEB6E0 /* launchImageView.png */; };
+		D744EF3F2A430B99006B70EF /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF3E2A430B99006B70EF /* correct.png */; };
+		D744EF412A430BA2006B70EF /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF402A430BA2006B70EF /* incorrect.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D70A85D92A2A52920056198F /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D719FECE2A14D18F00802417 /* Quiz1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz1.csv; sourceTree = "<group>"; };
-		D719FED02A1527A400802417 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
-		D719FED22A1528A300802417 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D719FED42A152B4500802417 /* SelectPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPartViewController.swift; sourceTree = "<group>"; };
 		D719FED62A152F7000802417 /* Quiz2.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz2.csv; sourceTree = "<group>"; };
 		D719FED82A1531B000802417 /* Quiz3.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz3.csv; sourceTree = "<group>"; };
@@ -41,7 +38,8 @@
 		D7320A862A137D97000D605C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7320A882A137D97000D605C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7320A902A138107000D605C /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
-		D78ABED42A25E66700FEB6E0 /* launchImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImageView.png; sourceTree = "<group>"; };
+		D744EF3E2A430B99006B70EF /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
+		D744EF402A430BA2006B70EF /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,20 +84,11 @@
 				D719FED82A1531B000802417 /* Quiz3.csv */,
 				D7320A832A137D97000D605C /* Assets.xcassets */,
 				D7320A852A137D97000D605C /* LaunchScreen.storyboard */,
+				D744EF3E2A430B99006B70EF /* correct.png */,
+				D744EF402A430BA2006B70EF /* incorrect.png */,
 				D7320A882A137D97000D605C /* Info.plist */,
-				D719FED02A1527A400802417 /* correct.png */,
-				D719FED22A1528A300802417 /* incorrect.png */,
-				D78ABED32A25E66700FEB6E0 /* launchImage */,
 			);
 			path = LogiQuiz;
-			sourceTree = "<group>";
-		};
-		D78ABED32A25E66700FEB6E0 /* launchImage */ = {
-			isa = PBXGroup;
-			children = (
-				D78ABED42A25E66700FEB6E0 /* launchImageView.png */,
-			);
-			path = launchImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,14 +149,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D78ABED52A25E66700FEB6E0 /* launchImageView.png in Resources */,
-				D719FED12A1527A500802417 /* correct.png in Resources */,
-				D719FED32A1528A400802417 /* incorrect.png in Resources */,
+				D744EF3F2A430B99006B70EF /* correct.png in Resources */,
 				D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */,
 				D719FED72A152F7000802417 /* Quiz2.csv in Resources */,
 				D7320A842A137D97000D605C /* Assets.xcassets in Resources */,
 				D7320A822A137D91000D605C /* Main.storyboard in Resources */,
 				D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */,
+				D744EF412A430BA2006B70EF /* incorrect.png in Resources */,
 				D719FED92A1531B000802417 /* Quiz3.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C23S8P6RSS;
+				DEVELOPMENT_TEAM = L3D4Z8K2KX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LogiQuiz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = Light;
@@ -363,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C23S8P6RSS;
+				DEVELOPMENT_TEAM = L3D4Z8K2KX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LogiQuiz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = Light;

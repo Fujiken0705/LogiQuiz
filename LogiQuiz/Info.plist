@@ -5,7 +5,7 @@
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>CFBundleDisplayName</key>
-	<string>サンプルクイズ</string>
+	<string>LogiQuiz</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
