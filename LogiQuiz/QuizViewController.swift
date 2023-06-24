@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class QuizViewController: UIViewController {
 
@@ -50,10 +51,12 @@ class QuizViewController: UIViewController {
 
     @IBAction func btnAction(sender : UIButton) {
         if sender.tag == Int(quizArrey[1]){
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
             correctCount += 1
             print("正解")
             judgeImageView.image = UIImage(named: "correct")
         } else {
+            AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {}
             print("不正解")
             judgeImageView.image = UIImage(named: "incorrect")
         }

@@ -38,6 +38,7 @@ class SelectPartViewController: UIViewController {
     @IBAction func PartButtonAction(sender:UIButton) {
         print(sender.tag)
         selectTag = sender.tag
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         performSegue(withIdentifier: "toQuizVC", sender: nil)
     }
 

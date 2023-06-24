@@ -32,12 +32,14 @@ class ScoreViewController: UIViewController {
     }
 
     @IBAction func shareButtonAction(_ sender: Any) {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         let activityItems = ["\(questionnum)問中、\(correct)問正解しました。","クイズアプリ"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC,animated:true)
     }
 
     @IBAction func toTopButtonAction(_ sender: Any) {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated:true)
     }
 
