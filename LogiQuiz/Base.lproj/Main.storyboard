@@ -9,26 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LogiQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="LogiQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LogiQuiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjZ-Ck-MHd">
-                                <rect key="frame" x="94" y="120" width="187.5" height="65"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qj-lY-XbD">
-                                <rect key="frame" x="20" y="293.5" width="335" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qj-lY-XbD">
+                                <rect key="frame" x="20" y="420" width="335" height="80"/>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="xyz-Dk-eUd"/>
-                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="スタート">
@@ -38,15 +29,20 @@
                                     <segue destination="IPM-R2-2GB" kind="presentation" modalPresentationStyle="fullScreen" id="3fV-xu-sFz"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="LogiQUIZ-tr.png" translatesAutoresizingMaskIntoConstraints="NO" id="IlT-aC-bCF">
+                                <rect key="frame" x="60" y="130" width="255" height="250"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.30588235294117649" green="0.79607843137254897" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="3qj-lY-XbD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7aJ-yO-v8g"/>
-                            <constraint firstItem="KjZ-Ck-MHd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EVS-bp-lIw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3qj-lY-XbD" secondAttribute="trailing" constant="20" id="N0f-Wo-kb4"/>
-                            <constraint firstItem="3qj-lY-XbD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aEp-u5-NXc"/>
-                            <constraint firstItem="KjZ-Ck-MHd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="pUF-1e-P4m"/>
+                            <constraint firstItem="IlT-aC-bCF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="6FZ-fq-Wdg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IlT-aC-bCF" secondAttribute="trailing" constant="60" id="8KA-ZR-iOx"/>
+                            <constraint firstItem="3qj-lY-XbD" firstAttribute="top" secondItem="IlT-aC-bCF" secondAttribute="bottom" constant="80" id="Kr0-IO-RTq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3qj-lY-XbD" secondAttribute="bottom" constant="160" id="RjO-EY-HEp"/>
+                            <constraint firstItem="IlT-aC-bCF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="k5I-1S-Jtl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3qj-lY-XbD" secondAttribute="trailing" constant="20" id="uyJ-V1-vaj"/>
+                            <constraint firstItem="3qj-lY-XbD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="v4l-hP-JiU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -303,6 +299,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LogiQUIZ-tr.png" width="375" height="375"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

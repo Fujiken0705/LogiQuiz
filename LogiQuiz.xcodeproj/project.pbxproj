@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70053442A480AF00092B971 /* 正解.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D70053432A480AF00092B971 /* 正解.mp3 */; };
+		D70053462A480AF70092B971 /* 不正解.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D70053452A480AF70092B971 /* 不正解.mp3 */; };
+		D700534C2A4968890092B971 /* LogiQUIZ-tr.png in Resources */ = {isa = PBXBuildFile; fileRef = D700534B2A4968890092B971 /* LogiQUIZ-tr.png */; };
+		D700534E2A49688E0092B971 /* LogiQUIZ.png in Resources */ = {isa = PBXBuildFile; fileRef = D700534D2A49688E0092B971 /* LogiQUIZ.png */; };
 		D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A85D92A2A52920056198F /* QuizViewController.swift */; };
 		D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FECE2A14D18F00802417 /* Quiz1.csv */; };
 		D719FED52A152B4600802417 /* SelectPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719FED42A152B4500802417 /* SelectPartViewController.swift */; };
@@ -14,7 +18,7 @@
 		D719FED92A1531B000802417 /* Quiz3.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FED82A1531B000802417 /* Quiz3.csv */; };
 		D7320A7B2A137D91000D605C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7A2A137D91000D605C /* AppDelegate.swift */; };
 		D7320A7D2A137D91000D605C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7C2A137D91000D605C /* SceneDelegate.swift */; };
-		D7320A7F2A137D91000D605C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7E2A137D91000D605C /* ViewController.swift */; };
+		D7320A7F2A137D91000D605C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7E2A137D91000D605C /* StartViewController.swift */; };
 		D7320A822A137D91000D605C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A802A137D91000D605C /* Main.storyboard */; };
 		D7320A842A137D97000D605C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7320A832A137D97000D605C /* Assets.xcassets */; };
 		D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A852A137D97000D605C /* LaunchScreen.storyboard */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D70053432A480AF00092B971 /* 正解.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "正解.mp3"; sourceTree = "<group>"; };
+		D70053452A480AF70092B971 /* 不正解.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "不正解.mp3"; sourceTree = "<group>"; };
+		D700534B2A4968890092B971 /* LogiQUIZ-tr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogiQUIZ-tr.png"; sourceTree = "<group>"; };
+		D700534D2A49688E0092B971 /* LogiQUIZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogiQUIZ.png; sourceTree = "<group>"; };
 		D70A85D92A2A52920056198F /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D719FECE2A14D18F00802417 /* Quiz1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz1.csv; sourceTree = "<group>"; };
 		D719FED42A152B4500802417 /* SelectPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPartViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +40,7 @@
 		D7320A772A137D91000D605C /* LogiQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogiQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7320A7A2A137D91000D605C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7320A7C2A137D91000D605C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D7320A7E2A137D91000D605C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7320A7E2A137D91000D605C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D7320A812A137D91000D605C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7320A832A137D97000D605C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7320A862A137D97000D605C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,13 +80,13 @@
 		D7320A792A137D91000D605C /* LogiQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				D7320A7E2A137D91000D605C /* StartViewController.swift */,
+				D719FED42A152B4500802417 /* SelectPartViewController.swift */,
 				D70A85D92A2A52920056198F /* QuizViewController.swift */,
+				D7320A902A138107000D605C /* ScoreViewController.swift */,
 				D7320A7A2A137D91000D605C /* AppDelegate.swift */,
 				D7320A7C2A137D91000D605C /* SceneDelegate.swift */,
-				D7320A7E2A137D91000D605C /* ViewController.swift */,
 				D7320A802A137D91000D605C /* Main.storyboard */,
-				D719FED42A152B4500802417 /* SelectPartViewController.swift */,
-				D7320A902A138107000D605C /* ScoreViewController.swift */,
 				D719FECE2A14D18F00802417 /* Quiz1.csv */,
 				D719FED62A152F7000802417 /* Quiz2.csv */,
 				D719FED82A1531B000802417 /* Quiz3.csv */,
@@ -87,6 +95,10 @@
 				D744EF3E2A430B99006B70EF /* correct.png */,
 				D744EF402A430BA2006B70EF /* incorrect.png */,
 				D7320A882A137D97000D605C /* Info.plist */,
+				D70053432A480AF00092B971 /* 正解.mp3 */,
+				D70053452A480AF70092B971 /* 不正解.mp3 */,
+				D700534B2A4968890092B971 /* LogiQUIZ-tr.png */,
+				D700534D2A49688E0092B971 /* LogiQUIZ.png */,
 			);
 			path = LogiQuiz;
 			sourceTree = "<group>";
@@ -149,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70053442A480AF00092B971 /* 正解.mp3 in Resources */,
 				D744EF3F2A430B99006B70EF /* correct.png in Resources */,
 				D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */,
 				D719FED72A152F7000802417 /* Quiz2.csv in Resources */,
@@ -156,7 +169,10 @@
 				D7320A822A137D91000D605C /* Main.storyboard in Resources */,
 				D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */,
 				D744EF412A430BA2006B70EF /* incorrect.png in Resources */,
+				D700534C2A4968890092B971 /* LogiQUIZ-tr.png in Resources */,
+				D70053462A480AF70092B971 /* 不正解.mp3 in Resources */,
 				D719FED92A1531B000802417 /* Quiz3.csv in Resources */,
+				D700534E2A49688E0092B971 /* LogiQUIZ.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7320A7F2A137D91000D605C /* ViewController.swift in Sources */,
+				D7320A7F2A137D91000D605C /* StartViewController.swift in Sources */,
 				D7320A7B2A137D91000D605C /* AppDelegate.swift in Sources */,
 				D7320A912A138107000D605C /* ScoreViewController.swift in Sources */,
 				D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */,
