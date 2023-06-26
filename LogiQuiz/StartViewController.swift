@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
     override func viewDidLoad() {

@@ -7,6 +7,7 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 class QuizViewController: UIViewController {
 
@@ -17,6 +18,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var judgeImageView: UIImageView!
 
 
+    var player: AVAudioPlayer?
+
     var csvArrey: [String] = []
     var quizArrey: [String] = []
     var quizCount = 0
@@ -25,7 +28,6 @@ class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("選択したのはレベル\(selectLevel)")
 
         csvArrey = loadCSV(filename: "Quiz\(selectLevel)")
 
@@ -51,16 +53,30 @@ class QuizViewController: UIViewController {
 
     @IBAction func btnAction(sender : UIButton) {
         if sender.tag == Int(quizArrey[1]){
+            if let soundURL = Bundle.main.url(forResource: "正解", withExtension: "mp3") {
+                do {
+                    player = try AVAudioPlayer(contentsOf: soundURL)
+                    player?.play()
+                } catch {
+                    print("error")
+                }
+            }
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             correctCount += 1
-            print("正解")
             judgeImageView.image = UIImage(named: "correct")
         } else {
+            if let soundURL = Bundle.main.url(forResource: "不正解", withExtension: "mp3") {
+                do {
+                    player = try AVAudioPlayer(contentsOf: soundURL)
+                    player?.play()
+                } catch {
+                    print("error")
+                }
+            }
             AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {}
-            print("不正解")
             judgeImageView.image = UIImage(named: "incorrect")
         }
-        print("スコア\(correctCount)")
+
         judgeImageView.isHidden = false
         answerButton1.isEnabled = false
         answerButton2.isEnabled = false
