@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  SampleQuiz
+//  StartViewController.swift
+//  LogiQuiz
 //
 //  Created by KentoFujita on 2023/05/16.
 //

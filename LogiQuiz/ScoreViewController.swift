@@ -1,6 +1,6 @@
 //
 //  ScoreViewController.swift
-//  SampleQuiz
+//  LogiQuiz
 //
 //  Created by KentoFujita on 2023/05/16.
 //
