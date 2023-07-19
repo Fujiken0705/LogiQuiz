@@ -34,12 +34,12 @@ class QuizViewController: UIViewController {
     }
 
     @IBAction func answerButtonTapped(_ sender: UIButton) {
-        let isCorrect = viewModel.checkAnswer(sender.tag - 1) // ボタンのtagは1から始まるため、インデックスに変換するには1を引きます。
+        let isCorrect = viewModel.checkAnswer(sender.tag - 1) // ボタンのtagは1から始まるため、引いてインデックスに変換する
         judgeImageView.image = UIImage(named: isCorrect ? "correct" : "incorrect")
         if viewModel.nextQuiz() {
             updateUI()
         } else {
-            // スコア画面に遷移
+            performSegue(withIdentifier: "toScoreVC", sender: nil)
         }
     }
 }

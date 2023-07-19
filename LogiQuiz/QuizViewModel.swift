@@ -11,11 +11,12 @@ final class QuizViewModel {
     var quizzes: [Quiz] = []
     var currentQuizIndex = 0
     var correctCount = 0
+    static var selectLevel = 0
 
     func loadCSV() {
-        guard let filePath = Bundle.main.path(forResource: "quiz", ofType: "csv") else {
-            print("Failed to find the CSV file.")
-            return
+        guard let filePath = Bundle.main.path(forResource: "Quiz\(QuizViewModel.selectLevel)", ofType: "csv") else {
+                print("Failed to find the CSV file.")
+                return
         }
 
         do {
