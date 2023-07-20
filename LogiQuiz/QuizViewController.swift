@@ -23,9 +23,16 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
         viewModel.loadCSV()
         updateUI()
+
+        viewModel.eventHandler = { event in
+            switch event {
+            case .errorOccurred(let message):
+                print(message)
+            }
+        }
     }
 
-    func updateUI() {
+    private func updateUI() {
         guard let quiz = viewModel.currentQuiz() else { return }
         quizNumberLabel.text = "問題 \(viewModel.currentQuizIndex + 1)"
         quizTextView.text = quiz.title
@@ -33,14 +40,49 @@ class QuizViewController: UIViewController {
         answerButton2.setTitle(quiz.selections[1], for: .normal)
     }
 
-    @IBAction func answerButtonTapped(_ sender: UIButton) {
-        let isCorrect = viewModel.checkAnswer(sender.tag - 1) // ボタンのtagは1から始まるため、引いてインデックスに変換する
-        judgeImageView.image = UIImage(named: isCorrect ? "correct" : "incorrect")
+    @IBAction private func answerButtonTapped(_ sender: UIButton) {
+        let isCorrect = viewModel.checkAnswer(sender.tag - 1)
+        judgeImageView.image = isCorrect ? Images.correct : Images.incorrect
+        playSound(isCorrect: isCorrect)
         if viewModel.nextQuiz() {
-            updateUI()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.updateUI()
+            }
         } else {
             performSegue(withIdentifier: "toScoreVC", sender: nil)
         }
     }
+
+    private func playSound(isCorrect: Bool) {
+        Feedback.play()
+        Player.play(soundURL: isCorrect ? SoundURL.correct : SoundURL.incorrect)
+    }
 }
 
+enum Images {
+    static let correct = UIImage(named: "correct")
+    static let incorrect = UIImage(named: "incorrect")
+}
+
+enum SoundURL {
+    static let correct = Bundle.main.url(forResource: "correct", withExtension: "mp3")!
+    static let incorrect = Bundle.main.url(forResource: "incorrect", withExtension: "mp3")!
+}
+
+
+final class Feedback {
+    static func play() {
+        // hoge
+    }
+}
+
+final class Player {
+    static func play(soundURL: URL) {
+        do {
+            let player = try AVAudioPlayer(contentsOf: soundURL)
+            player.play()
+        } catch {
+            print("error")
+        }
+    }
+}
