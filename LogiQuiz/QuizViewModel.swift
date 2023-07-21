@@ -16,7 +16,7 @@ final class QuizViewModel {
     private var quizzes: [Quiz] = []
     var currentQuizIndex = 0
     private var correctCount = 0
-    private static var selectLevel = 0
+    static var selectLevel = 0
 
     var eventHandler: ((Event) -> Void)?
 

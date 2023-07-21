@@ -54,35 +54,7 @@ class QuizViewController: UIViewController {
     }
 
     private func playSound(isCorrect: Bool) {
-        Feedback.play()
+        Feedback()
         Player.play(soundURL: isCorrect ? SoundURL.correct : SoundURL.incorrect)
-    }
-}
-
-enum Images {
-    static let correct = UIImage(named: "correct")
-    static let incorrect = UIImage(named: "incorrect")
-}
-
-enum SoundURL {
-    static let correct = Bundle.main.url(forResource: "correct", withExtension: "mp3")!
-    static let incorrect = Bundle.main.url(forResource: "incorrect", withExtension: "mp3")!
-}
-
-
-final class Feedback {
-    static func play() {
-        // hoge
-    }
-}
-
-final class Player {
-    static func play(soundURL: URL) {
-        do {
-            let player = try AVAudioPlayer(contentsOf: soundURL)
-            player.play()
-        } catch {
-            print("error")
-        }
     }
 }
