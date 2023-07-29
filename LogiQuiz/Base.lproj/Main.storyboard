@@ -170,7 +170,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnActionWithSender:" destination="jbG-7q-5qo" eventType="touchUpInside" id="ynO-Ll-tKs"/>
+                                    <action selector="answerButtonTapped:" destination="jbG-7q-5qo" eventType="touchUpInside" id="sma-2X-p9U"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZL-nm-JEc">
@@ -191,7 +191,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnActionWithSender:" destination="jbG-7q-5qo" eventType="touchUpInside" id="9Lp-9c-AjX"/>
+                                    <action selector="answerButtonTapped:" destination="jbG-7q-5qo" eventType="touchUpInside" id="FnR-vc-kyB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,7 +217,7 @@
                     <connections>
                         <outlet property="answerButton1" destination="qHV-pk-g4Y" id="C2g-Ni-Qi4"/>
                         <outlet property="answerButton2" destination="51m-Ey-48p" id="PfV-Ck-6le"/>
-                        <outlet property="judgeImageView" destination="YJ6-Bh-H7g" id="tbQ-bY-3mC"/>
+                        <outlet property="judgeImageView" destination="YJ6-Bh-H7g" id="sSK-0x-059"/>
                         <outlet property="quizNumberLabel" destination="YZL-nm-JEc" id="v3A-8D-ACt"/>
                         <outlet property="quizTextView" destination="d7g-ad-rRc" id="68K-r7-mxx"/>
                         <segue destination="9jS-dT-dzF" kind="presentation" identifier="toScoreVC" modalPresentationStyle="fullScreen" id="CM1-7B-tGw"/>
@@ -236,7 +236,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-08-dNw">
-                                <rect key="frame" x="20" y="243.5" width="335" height="60"/>
+                                <rect key="frame" x="20" y="336" width="335" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="zvs-pe-fHH"/>
@@ -280,11 +280,9 @@
                             <constraint firstItem="BE3-Oh-lFb" firstAttribute="top" secondItem="FZP-2v-qws" secondAttribute="top" constant="100" id="CTC-Xh-zAQ"/>
                             <constraint firstItem="FZP-2v-qws" firstAttribute="trailing" secondItem="HLg-08-dNw" secondAttribute="trailing" constant="20" id="UKK-b2-B6d"/>
                             <constraint firstItem="HLg-08-dNw" firstAttribute="top" secondItem="BE3-Oh-lFb" secondAttribute="bottom" constant="200" id="WPu-Ut-0Wb"/>
-                            <constraint firstItem="0bn-O4-Nui" firstAttribute="centerX" secondItem="yhh-IH-vKf" secondAttribute="centerX" id="ebB-6p-yS1"/>
                             <constraint firstItem="0bn-O4-Nui" firstAttribute="leading" secondItem="FZP-2v-qws" secondAttribute="leading" constant="20" id="ggY-0B-cne"/>
                             <constraint firstItem="HLg-08-dNw" firstAttribute="leading" secondItem="FZP-2v-qws" secondAttribute="leading" constant="20" id="ksc-Go-RAA"/>
                             <constraint firstItem="FZP-2v-qws" firstAttribute="bottom" secondItem="0bn-O4-Nui" secondAttribute="bottom" constant="276" id="m4S-Vc-n9r"/>
-                            <constraint firstItem="HLg-08-dNw" firstAttribute="top" secondItem="BE3-Oh-lFb" secondAttribute="bottom" constant="107.5" id="tfa-2x-lXh"/>
                         </constraints>
                     </view>
                     <connections>

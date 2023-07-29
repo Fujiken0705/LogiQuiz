@@ -1,5 +1,5 @@
 //
-//  SelectLevelViewController.swift
+//  SelectPartViewController.swift
 //  LogiQuiz
 //
 //  Created by KentoFujita on 2023/05/18.
@@ -30,14 +30,14 @@ class SelectPartViewController: UIViewController {
         part3Button.layer.borderColor = UIColor.black.cgColor
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
-        let quizVC = segue.destination as! QuizViewController
-        quizVC.selectLevel = selectTag
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
+//
+//    }
 
     @IBAction func PartButtonAction(sender:UIButton) {
         print(sender.tag)
         selectTag = sender.tag
+        QuizViewModel.selectPart = selectTag
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         performSegue(withIdentifier: "toQuizVC", sender: nil)
     }
