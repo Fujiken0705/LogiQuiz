@@ -217,6 +217,7 @@
                     <connections>
                         <outlet property="answerButton1" destination="qHV-pk-g4Y" id="C2g-Ni-Qi4"/>
                         <outlet property="answerButton2" destination="51m-Ey-48p" id="PfV-Ck-6le"/>
+                        <outlet property="judgeImageView" destination="YJ6-Bh-H7g" id="sSK-0x-059"/>
                         <outlet property="quizNumberLabel" destination="YZL-nm-JEc" id="v3A-8D-ACt"/>
                         <outlet property="quizTextView" destination="d7g-ad-rRc" id="68K-r7-mxx"/>
                         <segue destination="9jS-dT-dzF" kind="presentation" identifier="toScoreVC" modalPresentationStyle="fullScreen" id="CM1-7B-tGw"/>
@@ -229,7 +230,6 @@
         <!--Score View Controller-->
         <scene sceneID="vi4-op-zWA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R4h-u8-QLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="9jS-dT-dzF" customClass="ScoreViewController" customModule="LogiQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhh-IH-vKf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -291,6 +291,7 @@
                         <outlet property="shareButton" destination="HLg-08-dNw" id="Pi4-ZT-fIr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4h-u8-QLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765.5999999999999" y="3.1484257871064472"/>
         </scene>

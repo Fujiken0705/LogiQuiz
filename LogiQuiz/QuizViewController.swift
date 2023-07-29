@@ -7,7 +7,6 @@
 
 import UIKit
 import AudioToolbox
-import AVFoundation
 
 class QuizViewController: UIViewController {
 
@@ -22,7 +21,7 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.loadCSV()
-        updateUI()
+        updateQuizzes()
 
         viewModel.eventHandler = { event in
             switch event {
@@ -32,7 +31,7 @@ class QuizViewController: UIViewController {
         }
     }
 
-    private func updateUI() {
+    private func updateQuizzes() {
         guard let quiz = viewModel.currentQuiz() else { return }
         quizNumberLabel.text = "問題 \(viewModel.currentQuizIndex + 1)"
         quizTextView.text = quiz.title
@@ -42,11 +41,14 @@ class QuizViewController: UIViewController {
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
         let isCorrect = viewModel.checkAnswer(sender.tag - 1)
-        judgeImageView.image = isCorrect ? Images.correct : Images.incorrect
+        self.judgeImageView.isHidden = false
+        isCorrect ? Feedback.playcorrect() : Feedback.playincorrect()
         playSound(isCorrect: isCorrect)
+        updateCorrectUI(isCorrect: isCorrect)
         if viewModel.nextQuiz() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.updateUI()
+                self.updateQuizzes()
+                self.judgeImageView.isHidden = true
             }
         } else {
             performSegue(withIdentifier: "toScoreVC", sender: nil)
@@ -54,7 +56,10 @@ class QuizViewController: UIViewController {
     }
 
     private func playSound(isCorrect: Bool) {
-        Feedback()
         Player.play(soundURL: isCorrect ? SoundURL.correct : SoundURL.incorrect)
+    }
+
+    private func updateCorrectUI(isCorrect: Bool) {
+        judgeImageView.image = isCorrect ? Images.correct : Images.incorrect
     }
 }

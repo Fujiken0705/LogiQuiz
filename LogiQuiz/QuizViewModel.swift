@@ -16,12 +16,12 @@ final class QuizViewModel {
     private var quizzes: [Quiz] = []
     var currentQuizIndex = 0
     private var correctCount = 0
-    static var selectLevel = 0
+    static var selectPart = 0
 
     var eventHandler: ((Event) -> Void)?
 
     func loadCSV() {
-        guard let filePath = Bundle.main.path(forResource: "Quiz\(QuizViewModel.selectLevel)", ofType: "csv") else {
+        guard let filePath = Bundle.main.path(forResource: "Quiz\(QuizViewModel.selectPart)", ofType: "csv") else {
             eventHandler?(.errorOccurred("Failed to find the CSV file"))
                 print("Failed to find the CSV file.")
                 return
@@ -66,15 +66,4 @@ final class QuizViewModel {
         return currentQuizIndex < quizzes.count
     }
 
-//    func inverval() {
-//        judgeImageView.isHidden = false
-//        answerButton1.isEnabled = false
-//        answerButton2.isEnabled = false
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            self.judgeImageView.isHidden = true
-//            self.answerButton1.isEnabled = true
-//            self.answerButton2.isEnabled = true
-//            self.nextQuiz()
-//        }
-//    }
 }

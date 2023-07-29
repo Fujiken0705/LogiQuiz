@@ -37,7 +37,7 @@ class SelectPartViewController: UIViewController {
     @IBAction func PartButtonAction(sender:UIButton) {
         print(sender.tag)
         selectTag = sender.tag
-        QuizViewModel.selectLevel = selectTag
+        QuizViewModel.selectPart = selectTag
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         performSegue(withIdentifier: "toQuizVC", sender: nil)
     }

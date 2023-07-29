@@ -9,12 +9,13 @@ import Foundation
 import AVFAudio
 
 final class Player {
+    static var player: AVAudioPlayer?
     static func play(soundURL: URL) {
         do {
-            let player = try AVAudioPlayer(contentsOf: soundURL)
-            player.play()
+            player = try AVAudioPlayer(contentsOf: soundURL)
+            player?.play()
         } catch {
-            print("error")
+            print("Failed to play sound: \(error)")
         }
     }
 }
