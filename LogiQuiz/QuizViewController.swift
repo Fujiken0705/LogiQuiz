@@ -20,14 +20,26 @@ class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.loadCSV()
-        updateQuizzes()
-
-        viewModel.eventHandler = { event in
+        //UIAlertControllerの表示はメインスレッドで行わなければならないのでDispatchQueue.main.asyncを使用。
+        viewModel.eventHandler = { [weak self] event in
             switch event {
             case .errorOccurred(let message):
-                print(message)
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(alertController, animated: true)
+                }
             }
+        }
+        viewModel.loadCSV()
+        updateQuizzes()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toScoreVC",
+           let scoreViewController = segue.destination as? ScoreViewController {
+            scoreViewController.correct = viewModel.correctCount
+            scoreViewController.questionnum = viewModel.currentQuizIndex
         }
     }
 

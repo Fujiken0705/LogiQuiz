@@ -21,7 +21,7 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scoreLabel.text = "\(questionnum)問中、\(correct)問正解！"
+        scoreLabel.text = "\(questionnum + 1)問中、\(correct)問正解！"
 
         shareButton.layer.borderWidth = 2
         shareButton.layer.borderColor = UIColor.black.cgColor

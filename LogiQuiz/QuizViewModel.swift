@@ -15,7 +15,7 @@ final class QuizViewModel {
 
     private var quizzes: [Quiz] = []
     var currentQuizIndex = 0
-    private var correctCount = 0
+    var correctCount = 0
     static var selectPart = 0
 
     var eventHandler: ((Event) -> Void)?
@@ -42,7 +42,7 @@ final class QuizViewModel {
                 }
             }
         } catch {
-            print("Failed to read the CSV file: \(error)")
+            eventHandler?(.errorOccurred("Failed to read the CSV file: \(error)"))
         }
     }
 
