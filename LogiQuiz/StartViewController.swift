@@ -16,5 +16,11 @@ class StartViewController: UIViewController {
         startButton.layer.borderWidth = 2
         startButton.layer.borderColor = UIColor.black.cgColor
     }
+
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+        let selectPartVC = SelectPartViewController(nibName: "SelectPartViewController", bundle: nil)
+        navigationController?.pushViewController(selectPartVC, animated: true)
+    }
+
 }
 

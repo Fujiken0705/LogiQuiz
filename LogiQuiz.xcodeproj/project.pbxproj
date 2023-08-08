@@ -19,12 +19,15 @@
 		D7320A7B2A137D91000D605C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7A2A137D91000D605C /* AppDelegate.swift */; };
 		D7320A7D2A137D91000D605C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7C2A137D91000D605C /* SceneDelegate.swift */; };
 		D7320A7F2A137D91000D605C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A7E2A137D91000D605C /* StartViewController.swift */; };
-		D7320A822A137D91000D605C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A802A137D91000D605C /* Main.storyboard */; };
 		D7320A842A137D97000D605C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7320A832A137D97000D605C /* Assets.xcassets */; };
 		D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A852A137D97000D605C /* LaunchScreen.storyboard */; };
 		D7320A912A138107000D605C /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A902A138107000D605C /* ScoreViewController.swift */; };
 		D744EF3F2A430B99006B70EF /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF3E2A430B99006B70EF /* correct.png */; };
 		D744EF412A430BA2006B70EF /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF402A430BA2006B70EF /* incorrect.png */; };
+		D76300662A7F67BE00BD24DC /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76300652A7F67BE00BD24DC /* StartViewController.xib */; };
+		D763006A2A7F6E2500BD24DC /* SelectPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */; };
+		D763006C2A7F6ED100BD24DC /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D763006B2A7F6ED100BD24DC /* QuizViewController.xib */; };
+		D763006E2A7F70D500BD24DC /* ScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D763006D2A7F70D500BD24DC /* ScoreViewController.xib */; };
 		D77751652A5E2869001093FD /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77751642A5E2869001093FD /* QuizModel.swift */; };
 		D77751672A5E28CD001093FD /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77751662A5E28CD001093FD /* QuizViewModel.swift */; };
 		D7E6460F2A6926CF00511457 /* SoundURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6460E2A6926CF00511457 /* SoundURL.swift */; };
@@ -47,13 +50,16 @@
 		D7320A7A2A137D91000D605C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7320A7C2A137D91000D605C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7320A7E2A137D91000D605C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		D7320A812A137D91000D605C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7320A832A137D97000D605C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7320A862A137D97000D605C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7320A882A137D97000D605C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7320A902A138107000D605C /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		D744EF3E2A430B99006B70EF /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
 		D744EF402A430BA2006B70EF /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
+		D76300652A7F67BE00BD24DC /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPartViewController.xib; sourceTree = "<group>"; };
+		D763006B2A7F6ED100BD24DC /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		D763006D2A7F70D500BD24DC /* ScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreViewController.xib; sourceTree = "<group>"; };
 		D77751642A5E2869001093FD /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		D77751662A5E28CD001093FD /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		D7E6460E2A6926CF00511457 /* SoundURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundURL.swift; sourceTree = "<group>"; };
@@ -93,9 +99,13 @@
 			isa = PBXGroup;
 			children = (
 				D7320A7E2A137D91000D605C /* StartViewController.swift */,
+				D76300652A7F67BE00BD24DC /* StartViewController.xib */,
 				D719FED42A152B4500802417 /* SelectPartViewController.swift */,
+				D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */,
 				D70A85D92A2A52920056198F /* QuizViewController.swift */,
+				D763006B2A7F6ED100BD24DC /* QuizViewController.xib */,
 				D7320A902A138107000D605C /* ScoreViewController.swift */,
+				D763006D2A7F70D500BD24DC /* ScoreViewController.xib */,
 				D77751642A5E2869001093FD /* QuizModel.swift */,
 				D77751662A5E28CD001093FD /* QuizViewModel.swift */,
 				D7E6460E2A6926CF00511457 /* SoundURL.swift */,
@@ -104,7 +114,6 @@
 				D7E646142A6927CC00511457 /* Feedback.swift */,
 				D7320A7A2A137D91000D605C /* AppDelegate.swift */,
 				D7320A7C2A137D91000D605C /* SceneDelegate.swift */,
-				D7320A802A137D91000D605C /* Main.storyboard */,
 				D719FECE2A14D18F00802417 /* Quiz1.csv */,
 				D719FED62A152F7000802417 /* Quiz2.csv */,
 				D719FED82A1531B000802417 /* Quiz3.csv */,
@@ -182,14 +191,17 @@
 				D70053442A480AF00092B971 /* correct.mp3 in Resources */,
 				D744EF3F2A430B99006B70EF /* correct.png in Resources */,
 				D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */,
+				D763006E2A7F70D500BD24DC /* ScoreViewController.xib in Resources */,
 				D719FED72A152F7000802417 /* Quiz2.csv in Resources */,
 				D7320A842A137D97000D605C /* Assets.xcassets in Resources */,
-				D7320A822A137D91000D605C /* Main.storyboard in Resources */,
+				D763006C2A7F6ED100BD24DC /* QuizViewController.xib in Resources */,
+				D763006A2A7F6E2500BD24DC /* SelectPartViewController.xib in Resources */,
 				D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */,
 				D744EF412A430BA2006B70EF /* incorrect.png in Resources */,
 				D700534C2A4968890092B971 /* LogiQUIZ-tr.png in Resources */,
 				D70053462A480AF70092B971 /* incorrect.mp3 in Resources */,
 				D719FED92A1531B000802417 /* Quiz3.csv in Resources */,
+				D76300662A7F67BE00BD24DC /* StartViewController.xib in Resources */,
 				D700534E2A49688E0092B971 /* LogiQUIZ.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,14 +231,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D7320A802A137D91000D605C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D7320A812A137D91000D605C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D7320A852A137D97000D605C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,12 +366,14 @@
 				DEVELOPMENT_TEAM = L3D4Z8K2KX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LogiQuiz/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LogiQuiz;
 				INFOPLIST_KEY_LSApplicationCategoryType = Light;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "\"\" UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,12 +400,14 @@
 				DEVELOPMENT_TEAM = L3D4Z8K2KX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LogiQuiz/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LogiQuiz;
 				INFOPLIST_KEY_LSApplicationCategoryType = Light;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "\"\" UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

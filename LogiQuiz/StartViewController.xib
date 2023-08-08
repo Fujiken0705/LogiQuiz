@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="LogiQuiz" customModuleProvider="target">
+            <connections>
+                <outlet property="startButton" destination="kdv-pB-vLn" id="Kdt-b8-yWG"/>
+                <outlet property="view" destination="IZJ-Kw-Cb7" id="50b-ky-noX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IZJ-Kw-Cb7">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdv-pB-vLn">
+                    <rect key="frame" x="20" y="420" width="353" height="80"/>
+                    <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="スタート">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="startButtonTapped:" destination="-1" eventType="touchUpInside" id="HSD-Rr-2QQ"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="LogiQUIZ-tr.png" translatesAutoresizingMaskIntoConstraints="NO" id="ofi-6r-acE">
+                    <rect key="frame" x="60" y="130" width="273" height="250"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ecn-iS-wrY"/>
+            <color key="backgroundColor" red="0.30588235289999999" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="ecn-iS-wrY" firstAttribute="bottom" secondItem="kdv-pB-vLn" secondAttribute="bottom" constant="160" id="S1k-pv-L9T"/>
+                <constraint firstItem="ofi-6r-acE" firstAttribute="top" secondItem="ecn-iS-wrY" secondAttribute="top" constant="120" id="Ufk-RP-5Jr"/>
+                <constraint firstItem="kdv-pB-vLn" firstAttribute="top" secondItem="ofi-6r-acE" secondAttribute="bottom" constant="80" id="XRe-mu-gQ6"/>
+                <constraint firstItem="ofi-6r-acE" firstAttribute="leading" secondItem="ecn-iS-wrY" secondAttribute="leading" constant="60" id="ZMo-1l-ZJg"/>
+                <constraint firstItem="ecn-iS-wrY" firstAttribute="trailing" secondItem="ofi-6r-acE" secondAttribute="trailing" constant="60" id="b5o-UL-y8b"/>
+                <constraint firstItem="kdv-pB-vLn" firstAttribute="leading" secondItem="ecn-iS-wrY" secondAttribute="leading" constant="20" id="jRT-lS-TXt"/>
+                <constraint firstItem="ecn-iS-wrY" firstAttribute="trailing" secondItem="kdv-pB-vLn" secondAttribute="trailing" constant="20" id="rFf-VX-ntY"/>
+            </constraints>
+            <point key="canvasLocation" x="-259" y="652"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LogiQUIZ-tr.png" width="375" height="375"/>
+    </resources>
+</document>
