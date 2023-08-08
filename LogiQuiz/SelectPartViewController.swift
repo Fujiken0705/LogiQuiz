@@ -30,26 +30,29 @@ class SelectPartViewController: UIViewController {
         part3Button.layer.borderColor = UIColor.black.cgColor
     }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
-//
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
+    //
+    //    }
 
     @IBAction func PartButtonAction(sender:UIButton) {
         print(sender.tag)
         selectTag = sender.tag
         QuizViewModel.selectPart = selectTag
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        performSegue(withIdentifier: "toQuizVC", sender: nil)
+
+        let quizVC = QuizViewController(nibName: "QuizViewController", bundle: nil)
+        navigationController?.pushViewController(quizVC, animated: true)
+        print("押されてはいるよ")
     }
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }

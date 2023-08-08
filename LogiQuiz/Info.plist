@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>CFBundleDisplayName</key>
-	<string>LogiQuiz</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -23,8 +19,6 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
 				</dict>
 			</array>
 			<key>UIWindowSceneSessionRoleExternalDisplayNonInteractive</key>
@@ -35,8 +29,6 @@
 					<key>UISceneConfigurationName</key>
 					<string></string>
 					<key>UISceneDelegateClassName</key>
-					<string></string>
-					<key>UISceneStoryboardFile</key>
 					<string></string>
 				</dict>
 			</array>
