@@ -8,14 +8,14 @@
 import UIKit
 import AudioToolbox
 
-class QuizViewController: UIViewController {
+final class QuizViewController: UIViewController {
     
     @IBOutlet private weak var quizNumberLabel: UILabel!
     @IBOutlet private weak var quizTextView: UITextView!
     @IBOutlet private weak var answerButton1: UIButton!
     @IBOutlet private weak var answerButton2: UIButton!
     @IBOutlet private weak var judgeImageView: UIImageView!
-    
+
     var viewModel: QuizViewModel!
     
     override func viewDidLoad() {
