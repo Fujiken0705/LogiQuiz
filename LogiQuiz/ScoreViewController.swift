@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ScoreViewController: UIViewController {
-    @IBOutlet weak var scoreLabel: UILabel!
+final class ScoreViewController: UIViewController {
+    @IBOutlet private weak var scoreLabel: UILabel!
     
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet private weak var shareButton: UIButton!
     
-    @IBOutlet weak var returnTopButton: UIButton!
+    @IBOutlet private weak var returnTopButton: UIButton!
     
     
     var correct = 0
@@ -31,14 +31,14 @@ class ScoreViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func shareButtonAction(_ sender: Any) {
+    @IBAction private func shareButtonAction(_ sender: Any) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         let activityItems = ["\(questionnum)問中、\(correct)問正解しました。"+"LogiQuiz"+""]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC,animated:true)
     }
     
-    @IBAction func toTopButtonAction(_ sender: Any) {
+    @IBAction private func toTopButtonAction(_ sender: Any) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         navigationController?.popToRootViewController(animated: true)
     }

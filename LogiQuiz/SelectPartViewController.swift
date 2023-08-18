@@ -7,34 +7,37 @@
 
 import UIKit
 
-class SelectPartViewController: UIViewController {
+final class SelectPartViewController: UIViewController {
     enum Const {
         static let borderWidth: CGFloat = 2
         static let bordercolor = UIColor.black.cgColor
     }
 
-    @IBOutlet private weak var part1Button: UIButton!
+    @IBOutlet private weak var part1Button: UIButton! {
+        didSet {
+            part1Button.layer.borderWidth = Const.borderWidth
+            part1Button.layer.borderColor = Const.bordercolor
+        }
+    }
 
-    @IBOutlet private weak var part2Button: UIButton!
+    @IBOutlet private weak var part2Button: UIButton! {
+        didSet {
+            part2Button.layer.borderWidth = Const.borderWidth
+            part2Button.layer.borderColor = Const.bordercolor
+        }
+    }
 
 
-    @IBOutlet weak var part3Button: UIButton!
+    @IBOutlet private weak var part3Button: UIButton! {
+        didSet {
+            part3Button.layer.borderWidth = Const.borderWidth
+            part3Button.layer.borderColor = Const.bordercolor
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        part1Button.layer.borderWidth = Const.borderWidth
-        part1Button.layer.borderColor = Const.bordercolor
-        part2Button.layer.borderWidth = 2
-        part2Button.layer.borderColor = UIColor.black.cgColor
-        part3Button.layer.borderWidth = 2
-        part3Button.layer.borderColor = UIColor.black.cgColor
     }
-
-    //    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
-    //
-    //    }
 
     @IBAction private func PartButtonAction(sender:UIButton) {
         print(sender.tag)
