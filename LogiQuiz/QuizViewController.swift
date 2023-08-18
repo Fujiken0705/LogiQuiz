@@ -16,7 +16,7 @@ class QuizViewController: UIViewController {
     @IBOutlet private weak var answerButton2: UIButton!
     @IBOutlet private weak var judgeImageView: UIImageView!
     
-    private let viewModel = QuizViewModel()
+    var viewModel: QuizViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

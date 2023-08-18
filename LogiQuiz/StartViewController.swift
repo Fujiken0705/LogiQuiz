@@ -9,7 +9,7 @@ import UIKit
 
 class StartViewController: UIViewController {
 
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet private weak var startButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,7 +17,7 @@ class StartViewController: UIViewController {
         startButton.layer.borderColor = UIColor.black.cgColor
     }
 
-    @IBAction func startButtonTapped(_ sender: UIButton) {
+    @IBAction private func startButtonTapped(_ sender: UIButton) {
         let selectPartVC = SelectPartViewController(nibName: "SelectPartViewController", bundle: nil)
         navigationController?.pushViewController(selectPartVC, animated: true)
     }

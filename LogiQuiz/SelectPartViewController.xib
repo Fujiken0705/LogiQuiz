@@ -30,7 +30,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-8J-1Sp">
                     <rect key="frame" x="40" y="389" width="313" height="240"/>
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="SelectPartViewController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-uZ-Ung">
+                        <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="SelectPartViewController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-uZ-Ung">
                             <rect key="frame" x="0.0" y="0.0" width="313" height="60"/>
                             <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
