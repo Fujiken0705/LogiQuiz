@@ -13,15 +13,19 @@ final class QuizViewModel {
         case errorOccurred(String)
     }
 
-    private var quizzes: [Quiz] = []
+    private var quizzes: [Quiz] = [] //test行けそう
     var currentQuizIndex = 0
     var correctCount = 0
-    static var selectPart = 0
+    private var selectPart: Int
+
+    init(selectPart: Int) {
+        self.selectPart = selectPart
+    }
 
     var eventHandler: ((Event) -> Void)?
 
     func loadCSV() {
-        guard let filePath = Bundle.main.path(forResource: "Quiz\(QuizViewModel.selectPart)", ofType: "csv") else {
+        guard let filePath = Bundle.main.path(forResource: "Quiz\(selectPart)", ofType: "csv") else {
             eventHandler?(.errorOccurred("Failed to find the CSV file"))
                 print("Failed to find the CSV file.")
                 return

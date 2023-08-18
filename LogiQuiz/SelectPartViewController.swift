@@ -8,22 +8,24 @@
 import UIKit
 
 class SelectPartViewController: UIViewController {
+    enum Const {
+        static let borderWidth: CGFloat = 2
+        static let bordercolor = UIColor.black.cgColor
+    }
 
+    @IBOutlet private weak var part1Button: UIButton!
 
-    @IBOutlet weak var part1Button: UIButton!
-
-    @IBOutlet weak var part2Button: UIButton!
+    @IBOutlet private weak var part2Button: UIButton!
 
 
     @IBOutlet weak var part3Button: UIButton!
-    var selectTag = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        part1Button.layer.borderWidth = 2
-        part1Button.layer.borderColor = UIColor.black.cgColor
+        part1Button.layer.borderWidth = Const.borderWidth
+        part1Button.layer.borderColor = Const.bordercolor
         part2Button.layer.borderWidth = 2
         part2Button.layer.borderColor = UIColor.black.cgColor
         part3Button.layer.borderWidth = 2
@@ -34,13 +36,12 @@ class SelectPartViewController: UIViewController {
     //
     //    }
 
-    @IBAction func PartButtonAction(sender:UIButton) {
+    @IBAction private func PartButtonAction(sender:UIButton) {
         print(sender.tag)
-        selectTag = sender.tag
-        QuizViewModel.selectPart = selectTag
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
 
         let quizVC = QuizViewController(nibName: "QuizViewController", bundle: nil)
+        quizVC.viewModel = QuizViewModel(selectPart: sender.tag)
         navigationController?.pushViewController(quizVC, animated: true)
         print("押されてはいるよ")
     }
