@@ -11,6 +11,7 @@
 		D70053462A480AF70092B971 /* incorrect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D70053452A480AF70092B971 /* incorrect.mp3 */; };
 		D700534C2A4968890092B971 /* LogiQUIZ-tr.png in Resources */ = {isa = PBXBuildFile; fileRef = D700534B2A4968890092B971 /* LogiQUIZ-tr.png */; };
 		D700534E2A49688E0092B971 /* LogiQUIZ.png in Resources */ = {isa = PBXBuildFile; fileRef = D700534D2A49688E0092B971 /* LogiQUIZ.png */; };
+		D70553E52A98BBAA00CBB2F9 /* WrongQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70553E42A98BBAA00CBB2F9 /* WrongQuiz.swift */; };
 		D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A85D92A2A52920056198F /* QuizViewController.swift */; };
 		D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FECE2A14D18F00802417 /* Quiz1.csv */; };
 		D719FED52A152B4600802417 /* SelectPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719FED42A152B4500802417 /* SelectPartViewController.swift */; };
@@ -41,6 +42,7 @@
 		D70053452A480AF70092B971 /* incorrect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = incorrect.mp3; sourceTree = "<group>"; };
 		D700534B2A4968890092B971 /* LogiQUIZ-tr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogiQUIZ-tr.png"; sourceTree = "<group>"; };
 		D700534D2A49688E0092B971 /* LogiQUIZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogiQUIZ.png; sourceTree = "<group>"; };
+		D70553E42A98BBAA00CBB2F9 /* WrongQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongQuiz.swift; sourceTree = "<group>"; };
 		D70A85D92A2A52920056198F /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D719FECE2A14D18F00802417 /* Quiz1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz1.csv; sourceTree = "<group>"; };
 		D719FED42A152B4500802417 /* SelectPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPartViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				D7320A902A138107000D605C /* ScoreViewController.swift */,
 				D763006D2A7F70D500BD24DC /* ScoreViewController.xib */,
 				D77751642A5E2869001093FD /* QuizModel.swift */,
+				D70553E42A98BBAA00CBB2F9 /* WrongQuiz.swift */,
 				D77751662A5E28CD001093FD /* QuizViewModel.swift */,
 				D7E6460E2A6926CF00511457 /* SoundURL.swift */,
 				D7E646102A69272200511457 /* Player.swift */,
@@ -215,6 +218,7 @@
 			files = (
 				D7320A7F2A137D91000D605C /* StartViewController.swift in Sources */,
 				D7320A7B2A137D91000D605C /* AppDelegate.swift in Sources */,
+				D70553E52A98BBAA00CBB2F9 /* WrongQuiz.swift in Sources */,
 				D7E646152A6927CC00511457 /* Feedback.swift in Sources */,
 				D7320A912A138107000D605C /* ScoreViewController.swift in Sources */,
 				D7E646132A69277700511457 /* Images.swift in Sources */,
