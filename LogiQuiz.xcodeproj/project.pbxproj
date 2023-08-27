@@ -14,6 +14,8 @@
 		D70553E52A98BBAA00CBB2F9 /* WrongQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70553E42A98BBAA00CBB2F9 /* WrongQuiz.swift */; };
 		D70553E72A9B510500CBB2F9 /* box_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = D70553E62A9B510500CBB2F9 /* box_unchecked.png */; };
 		D70553E92A9B510D00CBB2F9 /* box_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = D70553E82A9B510D00CBB2F9 /* box_checked.png */; };
+		D70553EC2A9B9CF100CBB2F9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D70553EB2A9B9CF100CBB2F9 /* Realm */; };
+		D70553EE2A9B9CF100CBB2F9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D70553ED2A9B9CF100CBB2F9 /* RealmSwift */; };
 		D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A85D92A2A52920056198F /* QuizViewController.swift */; };
 		D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FECE2A14D18F00802417 /* Quiz1.csv */; };
 		D719FED52A152B4600802417 /* SelectPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719FED42A152B4500802417 /* SelectPartViewController.swift */; };
@@ -79,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70553EE2A9B9CF100CBB2F9 /* RealmSwift in Frameworks */,
+				D70553EC2A9B9CF100CBB2F9 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +159,10 @@
 			dependencies = (
 			);
 			name = LogiQuiz;
+			packageProductDependencies = (
+				D70553EB2A9B9CF100CBB2F9 /* Realm */,
+				D70553ED2A9B9CF100CBB2F9 /* RealmSwift */,
+			);
 			productName = LogiQuiz;
 			productReference = D7320A772A137D91000D605C /* LogiQuiz.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +191,9 @@
 				Base,
 			);
 			mainGroup = D7320A6E2A137D91000D605C;
+			packageReferences = (
+				D70553EA2A9B9CF100CBB2F9 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = D7320A782A137D91000D605C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -458,6 +469,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D70553EA2A9B9CF100CBB2F9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.42.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D70553EB2A9B9CF100CBB2F9 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D70553EA2A9B9CF100CBB2F9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D70553ED2A9B9CF100CBB2F9 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D70553EA2A9B9CF100CBB2F9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D7320A6F2A137D91000D605C /* Project object */;
 }
