@@ -12,6 +12,8 @@
 		D700534C2A4968890092B971 /* LogiQUIZ-tr.png in Resources */ = {isa = PBXBuildFile; fileRef = D700534B2A4968890092B971 /* LogiQUIZ-tr.png */; };
 		D700534E2A49688E0092B971 /* LogiQUIZ.png in Resources */ = {isa = PBXBuildFile; fileRef = D700534D2A49688E0092B971 /* LogiQUIZ.png */; };
 		D70553E52A98BBAA00CBB2F9 /* WrongQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70553E42A98BBAA00CBB2F9 /* WrongQuiz.swift */; };
+		D70553E72A9B510500CBB2F9 /* box_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = D70553E62A9B510500CBB2F9 /* box_unchecked.png */; };
+		D70553E92A9B510D00CBB2F9 /* box_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = D70553E82A9B510D00CBB2F9 /* box_checked.png */; };
 		D70A85DA2A2A52930056198F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A85D92A2A52920056198F /* QuizViewController.swift */; };
 		D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */ = {isa = PBXBuildFile; fileRef = D719FECE2A14D18F00802417 /* Quiz1.csv */; };
 		D719FED52A152B4600802417 /* SelectPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719FED42A152B4500802417 /* SelectPartViewController.swift */; };
@@ -43,6 +45,8 @@
 		D700534B2A4968890092B971 /* LogiQUIZ-tr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogiQUIZ-tr.png"; sourceTree = "<group>"; };
 		D700534D2A49688E0092B971 /* LogiQUIZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogiQUIZ.png; sourceTree = "<group>"; };
 		D70553E42A98BBAA00CBB2F9 /* WrongQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongQuiz.swift; sourceTree = "<group>"; };
+		D70553E62A9B510500CBB2F9 /* box_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_unchecked.png; sourceTree = "<group>"; };
+		D70553E82A9B510D00CBB2F9 /* box_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_checked.png; sourceTree = "<group>"; };
 		D70A85D92A2A52920056198F /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D719FECE2A14D18F00802417 /* Quiz1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz1.csv; sourceTree = "<group>"; };
 		D719FED42A152B4500802417 /* SelectPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPartViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				D70053452A480AF70092B971 /* incorrect.mp3 */,
 				D700534B2A4968890092B971 /* LogiQUIZ-tr.png */,
 				D700534D2A49688E0092B971 /* LogiQUIZ.png */,
+				D70553E62A9B510500CBB2F9 /* box_unchecked.png */,
+				D70553E82A9B510D00CBB2F9 /* box_checked.png */,
 			);
 			path = LogiQuiz;
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 				D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */,
 				D763006E2A7F70D500BD24DC /* ScoreViewController.xib in Resources */,
 				D719FED72A152F7000802417 /* Quiz2.csv in Resources */,
+				D70553E92A9B510D00CBB2F9 /* box_checked.png in Resources */,
 				D7320A842A137D97000D605C /* Assets.xcassets in Resources */,
+				D70553E72A9B510500CBB2F9 /* box_unchecked.png in Resources */,
 				D763006C2A7F6ED100BD24DC /* QuizViewController.xib in Resources */,
 				D763006A2A7F6E2500BD24DC /* SelectPartViewController.xib in Resources */,
 				D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */,

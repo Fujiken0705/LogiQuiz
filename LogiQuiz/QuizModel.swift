@@ -6,6 +6,7 @@
 //
 
 struct Quiz {
+    var id: String
     var title: String
     var selections: [String]
     var correctIndex: Int

@@ -13,7 +13,7 @@ final class QuizViewModel {
         case errorOccurred(String)
     }
 
-    private var quizzes: [Quiz] = [] //test行けそう
+    private var quizzes: [Quiz] = []//test行けそう
     var currentQuizIndex = 0
     var correctCount = 0
     private var selectPart: Int
@@ -35,13 +35,14 @@ final class QuizViewModel {
             let csvData = try String(contentsOfFile: filePath)
             let csvLines = csvData.components(separatedBy: .newlines)
 
-            for line in csvLines {
+            for (index, line) in csvLines.enumerated() {
                 let components = line.components(separatedBy: ",")
                 if components.count >= 3 {
                     let title = components[0]
                     let correctIndex = (Int(components[1]) ?? 1) - 1 //選択肢のインデックスは1からはじまる
                     let selections = Array(components[2...])
-                    let quiz = Quiz(title: title, selections: selections, correctIndex: correctIndex)
+                    let id = "p\(selectPart)q\(index + 1)"
+                    let quiz = Quiz(id: id, title: title, selections: selections, correctIndex: correctIndex)
                     quizzes.append(quiz)
                 }
             }
@@ -49,7 +50,6 @@ final class QuizViewModel {
             eventHandler?(.errorOccurred("Failed to read the CSV file: \(error)"))
         }
     }
-
 
     func currentQuiz() -> Quiz? {
         guard currentQuizIndex < quizzes.count else { return nil }

@@ -15,6 +15,7 @@ final class QuizViewController: UIViewController {
     @IBOutlet private weak var answerButton1: UIButton!
     @IBOutlet private weak var answerButton2: UIButton!
     @IBOutlet private weak var judgeImageView: UIImageView!
+    @IBOutlet private weak var checkBoxButton: UIButton!
 
     var viewModel: QuizViewModel!
     
@@ -49,6 +50,15 @@ final class QuizViewController: UIViewController {
         quizTextView.text = quiz.title
         answerButton1.setTitle(quiz.selections[0], for: .normal)
         answerButton2.setTitle(quiz.selections[1], for: .normal)
+        checkBoxButton.isSelected = false
+        checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
+    }
+
+    @IBAction func checkBoxTapped(_ sender: Any) {
+        checkBoxButton.isSelected.toggle() // 状態を切り替える
+        let imageName = checkBoxButton.isSelected ? "box_checked" : "box_unchecked"
+        checkBoxButton.setImage(UIImage(named: imageName), for: .normal)
+
     }
     
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
@@ -57,6 +67,10 @@ final class QuizViewController: UIViewController {
         isCorrect ? Feedback.playcorrect() : Feedback.playincorrect()
         playSound(isCorrect: isCorrect)
         updateCorrectUI(isCorrect: isCorrect)
+        if !isCorrect {
+            checkBoxButton.isSelected = true
+            checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+        }
         if viewModel.nextQuiz() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.updateQuizzes()

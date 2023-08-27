@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="answerButton1" destination="LgK-fH-PRq" id="ZTX-vi-NNT"/>
                 <outlet property="answerButton2" destination="fuG-ex-SaU" id="5JK-My-LjF"/>
+                <outlet property="checkBoxButton" destination="uxE-9M-B2g" id="Dpk-lR-VKs"/>
                 <outlet property="judgeImageView" destination="c3V-Sg-eON" id="dM1-MU-PJW"/>
                 <outlet property="quizNumberLabel" destination="D5G-oX-xCE" id="O8o-pr-VIi"/>
                 <outlet property="quizTextView" destination="dVL-bz-xLG" id="17K-rk-dyN"/>
@@ -75,6 +76,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-9M-B2g">
+                    <rect key="frame" x="314" y="108" width="79" height="62"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button" image="box_unchecked.png"/>
+                    <connections>
+                        <action selector="checkBoxTapped:" destination="-1" eventType="touchUpInside" id="4Qc-qN-cqh"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="4if-co-hvG"/>
             <color key="backgroundColor" red="0.30588235289999999" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -94,10 +104,11 @@
                 <constraint firstItem="4if-co-hvG" firstAttribute="trailing" secondItem="dVL-bz-xLG" secondAttribute="trailing" constant="20" id="scM-eb-LNe"/>
                 <constraint firstItem="dVL-bz-xLG" firstAttribute="top" secondItem="D5G-oX-xCE" secondAttribute="bottom" constant="30" id="v1d-Ov-uuI"/>
             </constraints>
-            <point key="canvasLocation" x="882" y="652"/>
+            <point key="canvasLocation" x="881.67938931297704" y="651.4084507042254"/>
         </view>
     </objects>
     <resources>
+        <image name="box_unchecked.png" width="417" height="343"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
