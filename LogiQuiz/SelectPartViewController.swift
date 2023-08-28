@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class SelectPartViewController: UIViewController {
     enum Const {
@@ -35,6 +36,9 @@ final class SelectPartViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var reviewButton: UIButton!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -46,7 +50,50 @@ final class SelectPartViewController: UIViewController {
         let quizVC = QuizViewController(nibName: "QuizViewController", bundle: nil)
         quizVC.viewModel = QuizViewModel(selectPart: sender.tag)
         navigationController?.pushViewController(quizVC, animated: true)
-        print("押されてはいるよ")
+    }
+
+    func fetchWrongQuizzes() -> [WrongQuiz] {
+        let realm = try! Realm()
+        return Array(realm.objects(WrongQuiz.self))
+    }
+
+    func fetchQuiz(from quizId: String) -> Quiz? {
+        let parts = quizId.split(separator: "q")
+        guard let part = parts.first, let index = Int(parts.last ?? "") else {
+            return nil
+        }
+
+        let filePath = Bundle.main.path(forResource: "Quiz\(part.dropFirst())", ofType: "csv")
+        do {
+            let csvData = try String(contentsOfFile: filePath!)
+            let csvLines = csvData.components(separatedBy: .newlines)
+            let line = csvLines[index - 1]
+            let components = line.components(separatedBy: ",")
+            let title = components[0]
+            let correctIndex = (Int(components[1]) ?? 1) - 1
+            let selections = Array(components[2...])
+            return Quiz(id: quizId, title: title, selections: selections, correctIndex: correctIndex)
+        } catch {
+            print("Error reading CSV for quiz id: \(quizId)")
+            return nil
+        }
+    }
+
+
+    @IBAction func reviewButtonTapped(_ sender: Any) {
+        let wrongQuizzes = fetchWrongQuizzes()
+
+        // 間違えた問題のIDの配列を作成
+        let wrongQuizIds = wrongQuizzes.map { $0.quizid }
+
+        // 間違えた問題を表示する`QuizViewController`を準備
+        let quizViewController = QuizViewController(nibName: "QuizViewController", bundle: nil)
+
+        // 間違えた問題のIDの配列をもとに`QuizViewModel`を初期化
+        quizViewController.viewModel = QuizViewModel(selectPart: 0, specificQuizIds: wrongQuizIds) // selectPartは0としておきます。specificQuizIdsのみを使用するためです。
+
+        // 間違えた問題を表示する`QuizViewController`をpush
+        navigationController?.pushViewController(quizViewController, animated: true)
     }
 
     /*

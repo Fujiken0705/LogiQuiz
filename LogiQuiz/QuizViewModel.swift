@@ -13,13 +13,15 @@ final class QuizViewModel {
         case errorOccurred(String)
     }
 
-    private var quizzes: [Quiz] = []//test行けそう
+    private var quizzes: [Quiz] = []
     var currentQuizIndex = 0
     var correctCount = 0
-    private var selectPart: Int
+    var selectPart: Int
+    var specificQuizIds: [String]?
 
-    init(selectPart: Int) {
+    init(selectPart: Int, specificQuizIds: [String]? = nil) {
         self.selectPart = selectPart
+        self.specificQuizIds = specificQuizIds
     }
 
     var eventHandler: ((Event) -> Void)?
@@ -27,8 +29,8 @@ final class QuizViewModel {
     func loadCSV() {
         guard let filePath = Bundle.main.path(forResource: "Quiz\(selectPart)", ofType: "csv") else {
             eventHandler?(.errorOccurred("Failed to find the CSV file"))
-                print("Failed to find the CSV file.")
-                return
+            print("Failed to find the CSV file.")
+            return
         }
 
         do {
@@ -39,9 +41,14 @@ final class QuizViewModel {
                 let components = line.components(separatedBy: ",")
                 if components.count >= 3 {
                     let title = components[0]
-                    let correctIndex = (Int(components[1]) ?? 1) - 1 //選択肢のインデックスは1からはじまる
+                    let correctIndex = (Int(components[1]) ?? 1) - 1
                     let selections = Array(components[2...])
                     let id = "p\(selectPart)q\(index + 1)"
+
+                    if let specificIds = specificQuizIds, !specificIds.contains(id) {
+                        continue
+                    }
+
                     let quiz = Quiz(id: id, title: title, selections: selections, correctIndex: correctIndex)
                     quizzes.append(quiz)
                 }
@@ -58,16 +65,15 @@ final class QuizViewModel {
 
     func checkAnswer(_ answerIndex: Int) -> Bool {
         guard let quiz = currentQuiz() else { return false }
-                if quiz.correctIndex == answerIndex {
-                    correctCount += 1
-                    return true
-                }
-                return false
+        if quiz.correctIndex == answerIndex {
+            correctCount += 1
+            return true
+        }
+        return false
     }
 
     func nextQuiz() -> Bool {
         currentQuizIndex += 1
         return currentQuizIndex < quizzes.count
     }
-
 }
