@@ -7,6 +7,7 @@
 
 import UIKit
 import AudioToolbox
+import RealmSwift
 
 final class QuizViewController: UIViewController {
     
@@ -61,6 +62,20 @@ final class QuizViewController: UIViewController {
 
     }
     
+    private func saveWrongQuiz() {
+        let wrongQuiz = WrongQuiz()
+        wrongQuiz.quizid = "p\(viewModel.selectPart)q\(viewModel.currentQuizIndex + 1)"  // quizidの形式に合わせて生成
+
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(wrongQuiz)
+            }
+        } catch {
+            print("Failed to save wrong quiz: \(error)")
+        }
+    }
+    
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
         let isCorrect = viewModel.checkAnswer(sender.tag - 1)
         self.judgeImageView.isHidden = false
@@ -70,6 +85,9 @@ final class QuizViewController: UIViewController {
         if !isCorrect {
             checkBoxButton.isSelected = true
             checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+            checkBoxButton.isSelected = true
+                    checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+                    saveWrongQuiz()  // 間違えた問題を保存
         }
         if viewModel.nextQuiz() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
