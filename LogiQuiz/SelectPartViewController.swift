@@ -41,11 +41,6 @@ final class SelectPartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // アプリのメインバンドル内のすべてのCSVファイルのパスを取得して印刷
-        let allCSVPaths = Bundle.main.paths(forResourcesOfType: "csv", inDirectory: nil)
-        print("All CSV Paths in the main bundle: \(allCSVPaths)")
-
         // 特定のリソース名に対して期待されるファイルパスを取得して印刷
         let resourceNames = ["Quiz1", "Quiz2", "Quiz3"]
         for resourceName in resourceNames {
@@ -55,11 +50,6 @@ final class SelectPartViewController: UIViewController {
                 print("Failed to find file path for \(resourceName)")
             }
         }
-
-        // 保存されているWrongQuizオブジェクトを表示
-        let wrongQuizzes = fetchWrongQuizzes()
-        print("Stored Wrong Quiz IDs: \(wrongQuizzes.map { $0.quizid })")
-
         // 特定の問題ID（例: "p1q3"）を使用して、fetchQuizメソッドをテスト
         if let testQuiz = fetchQuiz(from: "p1q3") {
             print("Fetched quiz for p1q3: \(testQuiz.title)")
@@ -78,12 +68,12 @@ final class SelectPartViewController: UIViewController {
         navigationController?.pushViewController(quizVC, animated: true)
     }
 
-    func fetchWrongQuizzes() -> [WrongQuiz] {
+    private func fetchWrongQuizzes() -> [WrongQuiz] {
         let realm = try! Realm()
         return Array(realm.objects(WrongQuiz.self))
     }
 
-    func fetchQuiz(from quizId: String) -> Quiz? {
+    private func fetchQuiz(from quizId: String) -> Quiz? {
         print("Fetching quiz for ID: \(quizId)")
 
         let parts = quizId.split(separator: "q")
@@ -122,14 +112,14 @@ final class SelectPartViewController: UIViewController {
     }
 
 
-    @IBAction func reviewButtonTapped(_ sender: Any) {
+    @IBAction private func reviewButtonTapped(_ sender: Any) {
         let wrongQuizzes = fetchWrongQuizzes()
         print("Wrong Quiz IDs: \(wrongQuizzes.map { $0.quizid })")
 
         // 間違えた問題のIDの配列を作成
         let wrongQuizIds = wrongQuizzes.map { $0.quizid }
 
-        // 各間違ったクイズIDに対して、クイズ情報を取得してみる
+        // 間違ったクイズIDに対して、クイズの情報を取得する
         for quizId in wrongQuizIds {
             if let quiz = fetchQuiz(from: quizId) {
                 print("Successfully fetched quiz for ID \(quizId): \(quiz.title)")
