@@ -47,13 +47,24 @@ final class QuizViewController: UIViewController {
     
     private func updateQuizzes() {
         guard let quiz = viewModel.currentQuiz() else { return }
+        let quizId = "p\(viewModel.selectPart)q\(viewModel.currentQuizIndex + 1)"
+
+        // Realmを使用して、そのIDの問題が間違えた問題リストに存在するかどうかを確認
+        let realm = try! Realm()
+        let isWrongQuiz = !realm.objects(WrongQuiz.self).filter("quizid == %@", quizId).isEmpty
+
+        // 存在する場合、チェックボックスにチェックを入れる
+        checkBoxButton.isSelected = isWrongQuiz
+        let imageName = isWrongQuiz ? "box_checked" : "box_unchecked"
+        checkBoxButton.setImage(UIImage(named: imageName), for: .normal)
+
+        // その他のUIの更新
         quizNumberLabel.text = "問題 \(viewModel.currentQuizIndex + 1)"
         quizTextView.text = quiz.title
         answerButton1.setTitle(quiz.selections[0], for: .normal)
         answerButton2.setTitle(quiz.selections[1], for: .normal)
-        checkBoxButton.isSelected = false
-        checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
     }
+
 
     @IBAction func checkBoxTapped(_ sender: Any) {
         checkBoxButton.isSelected.toggle() // 状態を切り替える
@@ -64,7 +75,7 @@ final class QuizViewController: UIViewController {
     
     private func saveWrongQuiz() {
         let wrongQuiz = WrongQuiz()
-        wrongQuiz.quizid = "p\(viewModel.selectPart)q\(viewModel.currentQuizIndex + 1)"  // quizidの形式に合わせて生成
+        wrongQuiz.quizid = "p\(viewModel.selectPart)q\(viewModel.currentQuizIndex + 1)"
 
         do {
             let realm = try Realm()
@@ -75,6 +86,20 @@ final class QuizViewController: UIViewController {
             print("Failed to save wrong quiz: \(error)")
         }
     }
+
+    private func removeWrongQuiz() {
+        let quizId = "p\(viewModel.selectPart)q\(viewModel.currentQuizIndex + 1)"
+        do {
+            let realm = try Realm()
+            if let wrongQuiz = realm.objects(WrongQuiz.self).filter("quizid == %@", quizId).first {
+                try realm.write {
+                    realm.delete(wrongQuiz)
+                }
+            }
+        } catch {
+            print("Failed to remove wrong quiz: \(error)")
+        }
+    }
     
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
         let isCorrect = viewModel.checkAnswer(sender.tag - 1)
@@ -82,12 +107,18 @@ final class QuizViewController: UIViewController {
         isCorrect ? Feedback.playcorrect() : Feedback.playincorrect()
         playSound(isCorrect: isCorrect)
         updateCorrectUI(isCorrect: isCorrect)
-        if !isCorrect {
-            checkBoxButton.isSelected = true
-            checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
-            checkBoxButton.isSelected = true
-                    checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
-                    saveWrongQuiz()  // 間違えた問題を保存
+        if isCorrect {
+            if checkBoxButton.isSelected {
+                checkBoxButton.isSelected = false
+                checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
+                removeWrongQuiz()  // 正解した問題を間違えた問題リストから削除
+            }
+        } else {
+            if !checkBoxButton.isSelected {
+                checkBoxButton.isSelected = true
+                checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+                saveWrongQuiz()  // 間違えた問題を保存
+            }
         }
         if viewModel.nextQuiz() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
