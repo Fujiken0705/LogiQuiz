@@ -9,53 +9,39 @@ import UIKit
 import RealmSwift
 
 final class SelectPartViewController: UIViewController {
-    enum Const {
-        static let borderWidth: CGFloat = 2
-        static let bordercolor = UIColor.black.cgColor
-    }
 
     @IBOutlet private weak var part1Button: UIButton! {
         didSet {
-            part1Button.layer.borderWidth = Const.borderWidth
-            part1Button.layer.borderColor = Const.bordercolor
+            part1Button.layer.borderWidth = ButtonBorder.borderWidth
+            part1Button.layer.borderColor = ButtonBorder.bordercolor
         }
     }
 
     @IBOutlet private weak var part2Button: UIButton! {
         didSet {
-            part2Button.layer.borderWidth = Const.borderWidth
-            part2Button.layer.borderColor = Const.bordercolor
+            part2Button.layer.borderWidth = ButtonBorder.borderWidth
+            part2Button.layer.borderColor = ButtonBorder.bordercolor
         }
     }
 
 
     @IBOutlet private weak var part3Button: UIButton! {
         didSet {
-            part3Button.layer.borderWidth = Const.borderWidth
-            part3Button.layer.borderColor = Const.bordercolor
+            part3Button.layer.borderWidth = ButtonBorder.borderWidth
+            part3Button.layer.borderColor = ButtonBorder.bordercolor
         }
     }
 
-    @IBOutlet private weak var reviewButton: UIButton!
+    @IBOutlet private weak var reviewButton: UIButton! {
+        didSet {
+            reviewButton.layer.borderWidth = ButtonBorder.borderWidth
+            reviewButton.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 特定のリソース名に対して期待されるファイルパスを取得して印刷
-        let resourceNames = ["Quiz1", "Quiz2", "Quiz3"]
-        for resourceName in resourceNames {
-            if let filePath = Bundle.main.path(forResource: resourceName, ofType: "csv") {
-                print("File path for \(resourceName): \(filePath)")
-            } else {
-                print("Failed to find file path for \(resourceName)")
-            }
-        }
-        // 特定の問題ID（例: "p1q3"）を使用して、fetchQuizメソッドをテスト
-        if let testQuiz = fetchQuiz(from: "p1q3") {
-            print("Fetched quiz for p1q3: \(testQuiz.title)")
-        } else {
-            print("Failed to fetch quiz for p1q3")
-        }
     }
 
 

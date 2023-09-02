@@ -45,7 +45,7 @@
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="トップに戻る">
+                    <buttonConfiguration key="configuration" style="plain" title="ホームに戻る">
                         <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                     </buttonConfiguration>
                     <connections>

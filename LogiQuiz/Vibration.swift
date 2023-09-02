@@ -1,5 +1,5 @@
 //
-//  Feedback.swift
+//  Vibration.swift
 //  LogiQuiz
 //
 //  Created by KentoFujita on 2023/07/20.
@@ -8,7 +8,7 @@
 import AudioToolbox
 import UIKit
 
-final class Feedback {
+final class Vibration {
     static func playcorrect() {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
