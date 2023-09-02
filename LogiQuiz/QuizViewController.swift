@@ -104,7 +104,7 @@ final class QuizViewController: UIViewController {
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
         let isCorrect = viewModel.checkAnswer(sender.tag - 1)
         self.judgeImageView.isHidden = false
-        isCorrect ? Feedback.playcorrect() : Feedback.playincorrect()
+        isCorrect ? Vibration.playcorrect() : Vibration.playincorrect()
         playSound(isCorrect: isCorrect)
         updateCorrectUI(isCorrect: isCorrect)
         if isCorrect {

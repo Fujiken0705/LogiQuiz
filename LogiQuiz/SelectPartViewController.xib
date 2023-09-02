@@ -36,7 +36,7 @@
                             <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="パート1">
+                            <buttonConfiguration key="configuration" style="plain" title="貿易取引の全体像">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
@@ -48,7 +48,7 @@
                             <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="パート2">
+                            <buttonConfiguration key="configuration" style="plain" title="市場調査・契約成立">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
@@ -60,7 +60,7 @@
                             <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="パート3">
+                            <buttonConfiguration key="configuration" style="plain" title="インコタームズ基礎">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
