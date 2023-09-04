@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 final class ScoreViewController: UIViewController {
     @IBOutlet private weak var scoreLabel: UILabel!
@@ -33,7 +34,7 @@ final class ScoreViewController: UIViewController {
     
     @IBAction private func shareButtonAction(_ sender: Any) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        let activityItems = ["\(questionnum)問中、\(correct)問正解しました。"+"LogiQuiz"+""]
+        let activityItems = ["\(questionnum)問中、\(correct)問正解しました。"+"https://apps.apple.com/us/app/logiquiz/id6450583773"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC,animated:true)
     }
@@ -41,6 +42,9 @@ final class ScoreViewController: UIViewController {
     @IBAction private func toTopButtonAction(_ sender: Any) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         navigationController?.popToRootViewController(animated: true)
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
     }
     
 }

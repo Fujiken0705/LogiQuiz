@@ -31,7 +31,7 @@ final class QuizViewModel {
         let partsToLoad: [Int]
         if selectPart == 0 {
             // specificQuizIdsが指定されている場合、全てのパートのクイズを読み込む
-            partsToLoad = [1, 2, 3]
+            partsToLoad = [1, 2, 3, 4, 5, 6, 7, 8] // ← ここを変更
         } else {
             partsToLoad = [selectPart]
         }

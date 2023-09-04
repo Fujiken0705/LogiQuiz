@@ -32,4 +32,9 @@ final class StartViewController: UIViewController {
         navigationController?.pushViewController(selectPartVC, animated: true)
     }
 
+    @IBAction func informButtonTapped(_ sender: Any) {
+        guard let url = URL(string: "https://forms.gle/fwxyq7EJ2VjP6Ls57") else { return }
+            UIApplication.shared.open(url)
+    }
+
 }

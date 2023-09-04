@@ -102,6 +102,7 @@ final class QuizViewController: UIViewController {
     }
     
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = false  // ボタンを無効化
         let isCorrect = viewModel.checkAnswer(sender.tag - 1)
         self.judgeImageView.isHidden = false
         isCorrect ? Vibration.playcorrect() : Vibration.playincorrect()
@@ -124,6 +125,7 @@ final class QuizViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.updateQuizzes()
                 self.judgeImageView.isHidden = true
+                sender.isEnabled = true  // ボタンを再度有効化
             }
         } else {
             let scoreViewController = ScoreViewController(nibName: "ScoreViewController", bundle: nil)
