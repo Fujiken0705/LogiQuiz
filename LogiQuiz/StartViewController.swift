@@ -9,11 +9,22 @@ import UIKit
 
 final class StartViewController: UIViewController {
 
-    @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet private weak var startButton: UIButton! {
+        didSet {
+            startButton.layer.borderWidth = ButtonBorder.borderWidth
+            startButton.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
+
+    @IBOutlet private weak var informButton: UIButton! {
+        didSet {
+            informButton.layer.borderWidth = ButtonBorder.borderWidth
+            informButton.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        startButton.layer.borderWidth = ButtonBorder.borderWidth
-        startButton.layer.borderColor = ButtonBorder.bordercolor
     }
 
     @IBAction private func startButtonTapped(_ sender: UIButton) {
