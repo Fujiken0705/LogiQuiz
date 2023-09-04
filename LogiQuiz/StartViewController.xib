@@ -28,7 +28,7 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tlo-qe-7vM">
-                    <rect key="frame" x="20" y="539" width="353" height="120"/>
+                    <rect key="frame" x="20" y="529" width="353" height="120"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdv-pB-vLn">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
@@ -50,6 +50,9 @@
                             <buttonConfiguration key="configuration" style="plain" title="お問い合わせはこちら">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="informButtonTapped:" destination="-1" eventType="touchUpInside" id="AUY-6F-ZIr"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
