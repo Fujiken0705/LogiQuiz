@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wy2-VW-7RQ">
-                    <rect key="frame" x="20" y="395" width="353" height="60"/>
+                    <rect key="frame" x="20" y="286" width="353" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="H25-9G-JOp"/>
+                        <constraint firstAttribute="height" constant="60" id="oTC-MJ-wfW"/>
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
                     <state key="normal" title="Button"/>
@@ -38,10 +38,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc7-vf-6ng">
-                    <rect key="frame" x="20" y="482" width="353" height="60"/>
+                    <rect key="frame" x="20" y="396" width="353" height="60"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="ZXh-td-Bpw"/>
+                        <constraint firstAttribute="height" constant="60" id="5EG-Ox-CyX"/>
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
                     <state key="normal" title="Button"/>
@@ -52,8 +52,8 @@
                         <action selector="toTopButtonAction:" destination="-1" eventType="touchUpInside" id="LkX-z3-6Gh"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqr-SL-4GM">
-                    <rect key="frame" x="112" y="163" width="168" height="33"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqr-SL-4GM">
+                    <rect key="frame" x="158.33333333333334" y="129" width="76.666666666666657" height="36"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -62,14 +62,14 @@
             <viewLayoutGuide key="safeArea" id="siI-pM-iaV"/>
             <color key="backgroundColor" red="0.30588235289999999" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="Tc7-vf-6ng" firstAttribute="leading" secondItem="siI-pM-iaV" secondAttribute="leading" constant="20" id="4ul-iG-3FV"/>
-                <constraint firstItem="sqr-SL-4GM" firstAttribute="top" secondItem="siI-pM-iaV" secondAttribute="top" constant="100" id="Gqf-md-cdn"/>
-                <constraint firstItem="Wy2-VW-7RQ" firstAttribute="leading" secondItem="siI-pM-iaV" secondAttribute="leading" constant="20" id="GzO-nO-VoO"/>
-                <constraint firstItem="Wy2-VW-7RQ" firstAttribute="top" secondItem="sqr-SL-4GM" secondAttribute="bottom" constant="200" id="QbG-K3-YBR"/>
-                <constraint firstItem="siI-pM-iaV" firstAttribute="bottom" secondItem="Tc7-vf-6ng" secondAttribute="bottom" constant="276" id="Tud-IT-a1V"/>
-                <constraint firstItem="siI-pM-iaV" firstAttribute="trailing" secondItem="Wy2-VW-7RQ" secondAttribute="trailing" constant="20" id="Vpk-qs-rUA"/>
-                <constraint firstItem="sqr-SL-4GM" firstAttribute="centerX" secondItem="ECj-gb-QcQ" secondAttribute="centerX" id="azY-fp-vtk"/>
-                <constraint firstItem="siI-pM-iaV" firstAttribute="trailing" secondItem="Tc7-vf-6ng" secondAttribute="trailing" constant="20" id="sV0-pM-rrn"/>
+                <constraint firstItem="siI-pM-iaV" firstAttribute="trailing" secondItem="Wy2-VW-7RQ" secondAttribute="trailing" constant="20" id="1Rg-u1-XJd"/>
+                <constraint firstItem="Tc7-vf-6ng" firstAttribute="leading" secondItem="siI-pM-iaV" secondAttribute="leading" constant="20" id="3Yj-bn-mY5"/>
+                <constraint firstItem="sqr-SL-4GM" firstAttribute="centerX" secondItem="ECj-gb-QcQ" secondAttribute="centerX" id="4iK-qK-hwt"/>
+                <constraint firstItem="Tc7-vf-6ng" firstAttribute="top" secondItem="Wy2-VW-7RQ" secondAttribute="bottom" constant="50" id="PvC-5d-SVb"/>
+                <constraint firstItem="Tc7-vf-6ng" firstAttribute="centerY" secondItem="ECj-gb-QcQ" secondAttribute="centerY" id="VUL-wu-ale"/>
+                <constraint firstItem="sqr-SL-4GM" firstAttribute="top" secondItem="siI-pM-iaV" secondAttribute="top" constant="70" id="aud-Ng-FqR"/>
+                <constraint firstItem="siI-pM-iaV" firstAttribute="trailing" secondItem="Tc7-vf-6ng" secondAttribute="trailing" constant="20" id="bZo-Xh-RpW"/>
+                <constraint firstItem="Wy2-VW-7RQ" firstAttribute="leading" secondItem="siI-pM-iaV" secondAttribute="leading" constant="20" id="cy7-Ld-nnT"/>
             </constraints>
             <point key="canvasLocation" x="1227" y="-644"/>
         </view>

@@ -32,6 +32,41 @@ final class SelectPartViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var part4Button: UIButton! {
+        didSet {
+            part4Button.layer.borderWidth = ButtonBorder.borderWidth
+            part4Button.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
+
+    @IBOutlet weak var part5Button: UIButton! {
+        didSet {
+            part5Button.layer.borderWidth = ButtonBorder.borderWidth
+            part5Button.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
+
+    @IBOutlet weak var part6Button: UIButton! {
+        didSet {
+            part6Button.layer.borderWidth = ButtonBorder.borderWidth
+            part6Button.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
+
+    @IBOutlet weak var part7Button: UIButton! {
+        didSet {
+            part7Button.layer.borderWidth = ButtonBorder.borderWidth
+            part7Button.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
+
+    @IBOutlet weak var part8Button: UIButton! {
+        didSet {
+            part8Button.layer.borderWidth = ButtonBorder.borderWidth
+            part8Button.layer.borderColor = ButtonBorder.bordercolor
+        }
+    }
+
     @IBOutlet private weak var reviewButton: UIButton! {
         didSet {
             reviewButton.layer.borderWidth = ButtonBorder.borderWidth
@@ -39,9 +74,9 @@ final class SelectPartViewController: UIViewController {
         }
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "パートを選択"
     }
 
 

@@ -13,30 +13,29 @@
                 <outlet property="part1Button" destination="pbB-uZ-Ung" id="w4G-07-tMT"/>
                 <outlet property="part2Button" destination="RJf-ql-gML" id="k8j-8L-tZw"/>
                 <outlet property="part3Button" destination="Hqv-kH-pvC" id="XZJ-KE-So9"/>
+                <outlet property="part4Button" destination="xM1-fz-HhE" id="WiQ-X3-hkC"/>
+                <outlet property="part5Button" destination="57W-T6-lXV" id="vdH-Et-xpm"/>
+                <outlet property="part6Button" destination="SS6-oY-C2w" id="h4e-Uo-tHc"/>
+                <outlet property="part7Button" destination="zwH-Ir-YP6" id="CTs-J3-sWy"/>
+                <outlet property="part8Button" destination="Nwc-92-ejo" id="P7l-X6-poK"/>
                 <outlet property="reviewButton" destination="aKC-Qm-vcu" id="3EN-TF-8aj"/>
                 <outlet property="view" destination="BGb-Tg-Xsa" id="Qiu-qB-bt5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="BGb-Tg-Xsa">
+        <view contentMode="scaleToFill" ambiguous="YES" id="BGb-Tg-Xsa">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パートを選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xfq-um-GPj">
-                    <rect key="frame" x="20" y="159" width="353" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-8J-1Sp">
-                    <rect key="frame" x="40" y="389" width="313" height="240"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-8J-1Sp">
+                    <rect key="frame" x="20" y="119" width="353" height="600"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="SelectPartViewController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-uZ-Ung">
-                            <rect key="frame" x="0.0" y="0.0" width="313" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="50.666666666666664"/>
                             <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="貿易取引の全体像">
+                            <buttonConfiguration key="configuration" style="plain" title="1.貿易取引の全体像">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
@@ -44,11 +43,11 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJf-ql-gML">
-                            <rect key="frame" x="0.0" y="90" width="313" height="60"/>
+                            <rect key="frame" x="0.0" y="68.666666666666657" width="353" height="50.666666666666657"/>
                             <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="市場調査・契約成立">
+                            <buttonConfiguration key="configuration" style="plain" title="2.市場調査・契約">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
@@ -56,46 +55,102 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqv-kH-pvC">
-                            <rect key="frame" x="0.0" y="180" width="313" height="60"/>
+                            <rect key="frame" x="0.0" y="137.33333333333331" width="353" height="50.666666666666657"/>
                             <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="インコタームズ基礎">
+                            <buttonConfiguration key="configuration" style="plain" title="3.インコタームズ">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="TYo-LN-Bnt"/>
                             </connections>
                         </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM1-fz-HhE">
+                            <rect key="frame" x="0.0" y="206" width="353" height="50.666666666666686"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="4.品質・数量条件">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="ZZr-Oo-4dT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57W-T6-lXV">
+                            <rect key="frame" x="0.0" y="274.66666666666669" width="353" height="50.666666666666686"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="5.海上・航空輸送">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="gT1-eU-PVd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SS6-oY-C2w">
+                            <rect key="frame" x="0.0" y="343.33333333333331" width="353" height="50.666666666666686"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="6.海上保険">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="LRQ-db-OXg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwH-Ir-YP6">
+                            <rect key="frame" x="0.0" y="412" width="353" height="50.666666666666686"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="7.国際貿易体制基礎">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="75h-sE-uHh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-92-ejo">
+                            <rect key="frame" x="0.0" y="480.66666666666663" width="353" height="50.666666666666629"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="8.貿易書類基礎">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="8SU-yG-BQG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKC-Qm-vcu">
+                            <rect key="frame" x="0.0" y="549.33333333333337" width="353" height="50.666666666666629"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="問題を復習する">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="reviewButtonTapped:" destination="-1" eventType="touchUpInside" id="g80-mm-u0D"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="240" id="PSN-ah-XLl"/>
+                        <constraint firstAttribute="height" constant="600" id="qPL-X0-qCs"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKC-Qm-vcu">
-                    <rect key="frame" x="10" y="714" width="373" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.8862745098" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="間違えた問題を復習する">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="reviewButtonTapped:" destination="-1" eventType="touchUpInside" id="g80-mm-u0D"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="UYD-QW-jbQ"/>
             <color key="backgroundColor" red="0.30588235289999999" green="0.79607843140000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="UYD-QW-jbQ" firstAttribute="trailing" secondItem="i2c-8J-1Sp" secondAttribute="trailing" constant="40" id="Mu0-d3-Zzd"/>
-                <constraint firstItem="xfq-um-GPj" firstAttribute="leading" secondItem="UYD-QW-jbQ" secondAttribute="leading" constant="20" id="aVJ-ZR-Jpq"/>
-                <constraint firstItem="i2c-8J-1Sp" firstAttribute="centerX" secondItem="BGb-Tg-Xsa" secondAttribute="centerX" id="hqa-hU-19J"/>
-                <constraint firstItem="i2c-8J-1Sp" firstAttribute="leading" secondItem="UYD-QW-jbQ" secondAttribute="leading" constant="40" id="jy7-BW-H0O"/>
-                <constraint firstItem="i2c-8J-1Sp" firstAttribute="top" secondItem="xfq-um-GPj" secondAttribute="bottom" constant="200" id="rfq-eD-3qS"/>
-                <constraint firstItem="UYD-QW-jbQ" firstAttribute="trailing" secondItem="xfq-um-GPj" secondAttribute="trailing" constant="20" id="sUS-UQ-kDa"/>
-                <constraint firstItem="xfq-um-GPj" firstAttribute="top" secondItem="UYD-QW-jbQ" secondAttribute="top" constant="100" id="yVA-oT-qIq"/>
+                <constraint firstItem="UYD-QW-jbQ" firstAttribute="trailing" secondItem="i2c-8J-1Sp" secondAttribute="trailing" constant="20" id="Ufk-E7-EZj"/>
+                <constraint firstItem="i2c-8J-1Sp" firstAttribute="leading" secondItem="UYD-QW-jbQ" secondAttribute="leading" constant="20" id="jkj-8h-4Ep"/>
+                <constraint firstItem="i2c-8J-1Sp" firstAttribute="centerY" secondItem="BGb-Tg-Xsa" secondAttribute="centerY" id="rze-db-W4S"/>
+                <constraint firstItem="i2c-8J-1Sp" firstAttribute="top" secondItem="UYD-QW-jbQ" secondAttribute="top" constant="60" id="yX7-Bj-lH0"/>
             </constraints>
             <point key="canvasLocation" x="-335.1145038167939" y="651.4084507042254"/>
         </view>
