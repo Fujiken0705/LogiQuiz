@@ -30,11 +30,11 @@
 		D744EF3F2A430B99006B70EF /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF3E2A430B99006B70EF /* correct.png */; };
 		D744EF412A430BA2006B70EF /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF402A430BA2006B70EF /* incorrect.png */; };
 		D74F4C7A2AA1EB7800981B0A /* UIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F4C792AA1EB7800981B0A /* UIModifier.swift */; };
-		D74F4C7E2AA2D44B00981B0A /* Quiz数量.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C7D2AA2D44B00981B0A /* Quiz数量.csv */; };
-		D74F4C802AA2D6BD00981B0A /* Quiz海上、交通輸送.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C7F2AA2D6BD00981B0A /* Quiz海上、交通輸送.csv */; };
-		D74F4C822AA2E03100981B0A /* Quiz海上保険.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C812AA2E03100981B0A /* Quiz海上保険.csv */; };
-		D74F4C842AA2E07200981B0A /* Quiz国際貿易体制.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C832AA2E07200981B0A /* Quiz国際貿易体制.csv */; };
-		D74F4C862AA2E09A00981B0A /* Quiz貿易書類基礎.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C852AA2E09A00981B0A /* Quiz貿易書類基礎.csv */; };
+		D74F4C7E2AA2D44B00981B0A /* Quiz4.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C7D2AA2D44B00981B0A /* Quiz4.csv */; };
+		D74F4C802AA2D6BD00981B0A /* Quiz5.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C7F2AA2D6BD00981B0A /* Quiz5.csv */; };
+		D74F4C822AA2E03100981B0A /* Quiz6.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C812AA2E03100981B0A /* Quiz6.csv */; };
+		D74F4C842AA2E07200981B0A /* Quiz7.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C832AA2E07200981B0A /* Quiz7.csv */; };
+		D74F4C862AA2E09A00981B0A /* Quiz8.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C852AA2E09A00981B0A /* Quiz8.csv */; };
 		D76300662A7F67BE00BD24DC /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76300652A7F67BE00BD24DC /* StartViewController.xib */; };
 		D763006A2A7F6E2500BD24DC /* SelectPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */; };
 		D763006C2A7F6ED100BD24DC /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D763006B2A7F6ED100BD24DC /* QuizViewController.xib */; };
@@ -71,11 +71,11 @@
 		D744EF3E2A430B99006B70EF /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
 		D744EF402A430BA2006B70EF /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D74F4C792AA1EB7800981B0A /* UIModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModifier.swift; sourceTree = "<group>"; };
-		D74F4C7D2AA2D44B00981B0A /* Quiz数量.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Quiz数量.csv"; sourceTree = "<group>"; };
-		D74F4C7F2AA2D6BD00981B0A /* Quiz海上、交通輸送.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Quiz海上、交通輸送.csv"; sourceTree = "<group>"; };
-		D74F4C812AA2E03100981B0A /* Quiz海上保険.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Quiz海上保険.csv"; sourceTree = "<group>"; };
-		D74F4C832AA2E07200981B0A /* Quiz国際貿易体制.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Quiz国際貿易体制.csv"; sourceTree = "<group>"; };
-		D74F4C852AA2E09A00981B0A /* Quiz貿易書類基礎.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Quiz貿易書類基礎.csv"; sourceTree = "<group>"; };
+		D74F4C7D2AA2D44B00981B0A /* Quiz4.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz4.csv; sourceTree = "<group>"; };
+		D74F4C7F2AA2D6BD00981B0A /* Quiz5.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz5.csv; sourceTree = "<group>"; };
+		D74F4C812AA2E03100981B0A /* Quiz6.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz6.csv; sourceTree = "<group>"; };
+		D74F4C832AA2E07200981B0A /* Quiz7.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz7.csv; sourceTree = "<group>"; };
+		D74F4C852AA2E09A00981B0A /* Quiz8.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz8.csv; sourceTree = "<group>"; };
 		D76300652A7F67BE00BD24DC /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPartViewController.xib; sourceTree = "<group>"; };
 		D763006B2A7F6ED100BD24DC /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
@@ -141,11 +141,11 @@
 				D719FECE2A14D18F00802417 /* Quiz1.csv */,
 				D719FED62A152F7000802417 /* Quiz2.csv */,
 				D719FED82A1531B000802417 /* Quiz3.csv */,
-				D74F4C7D2AA2D44B00981B0A /* Quiz数量.csv */,
-				D74F4C7F2AA2D6BD00981B0A /* Quiz海上、交通輸送.csv */,
-				D74F4C812AA2E03100981B0A /* Quiz海上保険.csv */,
-				D74F4C832AA2E07200981B0A /* Quiz国際貿易体制.csv */,
-				D74F4C852AA2E09A00981B0A /* Quiz貿易書類基礎.csv */,
+				D74F4C7D2AA2D44B00981B0A /* Quiz4.csv */,
+				D74F4C7F2AA2D6BD00981B0A /* Quiz5.csv */,
+				D74F4C812AA2E03100981B0A /* Quiz6.csv */,
+				D74F4C832AA2E07200981B0A /* Quiz7.csv */,
+				D74F4C852AA2E09A00981B0A /* Quiz8.csv */,
 				D7320A832A137D97000D605C /* Assets.xcassets */,
 				D7320A852A137D97000D605C /* LaunchScreen.storyboard */,
 				D744EF3E2A430B99006B70EF /* correct.png */,
@@ -239,15 +239,15 @@
 				D719FECF2A14D18F00802417 /* Quiz1.csv in Resources */,
 				D744EF412A430BA2006B70EF /* incorrect.png in Resources */,
 				D700534C2A4968890092B971 /* LogiQUIZ-tr.png in Resources */,
-				D74F4C802AA2D6BD00981B0A /* Quiz海上、交通輸送.csv in Resources */,
+				D74F4C802AA2D6BD00981B0A /* Quiz5.csv in Resources */,
 				D70053462A480AF70092B971 /* incorrect.mp3 in Resources */,
-				D74F4C862AA2E09A00981B0A /* Quiz貿易書類基礎.csv in Resources */,
+				D74F4C862AA2E09A00981B0A /* Quiz8.csv in Resources */,
 				D719FED92A1531B000802417 /* Quiz3.csv in Resources */,
 				D76300662A7F67BE00BD24DC /* StartViewController.xib in Resources */,
-				D74F4C7E2AA2D44B00981B0A /* Quiz数量.csv in Resources */,
+				D74F4C7E2AA2D44B00981B0A /* Quiz4.csv in Resources */,
 				D700534E2A49688E0092B971 /* LogiQUIZ.png in Resources */,
-				D74F4C842AA2E07200981B0A /* Quiz国際貿易体制.csv in Resources */,
-				D74F4C822AA2E03100981B0A /* Quiz海上保険.csv in Resources */,
+				D74F4C842AA2E07200981B0A /* Quiz7.csv in Resources */,
+				D74F4C822AA2E03100981B0A /* Quiz6.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
