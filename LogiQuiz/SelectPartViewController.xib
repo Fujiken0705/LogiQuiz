@@ -23,7 +23,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" ambiguous="YES" id="BGb-Tg-Xsa">
+        <view contentMode="scaleToFill" id="BGb-Tg-Xsa">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -39,7 +39,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="MH5-vA-5oO"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="MH5-vA-5oO"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJf-ql-gML">
@@ -51,7 +51,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="Cyx-zB-2Pv"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="Cyx-zB-2Pv"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqv-kH-pvC">
@@ -63,7 +63,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="TYo-LN-Bnt"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="TYo-LN-Bnt"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM1-fz-HhE">
@@ -75,7 +75,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="ZZr-Oo-4dT"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="ZZr-Oo-4dT"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57W-T6-lXV">
@@ -87,7 +87,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="gT1-eU-PVd"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="gT1-eU-PVd"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SS6-oY-C2w">
@@ -99,7 +99,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="LRQ-db-OXg"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="LRQ-db-OXg"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwH-Ir-YP6">
@@ -111,7 +111,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="75h-sE-uHh"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="75h-sE-uHh"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-92-ejo">
@@ -123,7 +123,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="PartButtonActionWithSender:" destination="-1" eventType="touchUpInside" id="8SU-yG-BQG"/>
+                                <action selector="PartButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="8SU-yG-BQG"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKC-Qm-vcu">
