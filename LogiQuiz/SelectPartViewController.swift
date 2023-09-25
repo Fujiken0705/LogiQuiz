@@ -75,18 +75,20 @@ final class SelectPartViewController: UIViewController {
     }
 
 
-    private var viewModel = SelectPartViewModel()
+    private var selectPartViewModel = SelectPartViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "パートを選択" //ViewModel.titleに改名可能？？
+        navigationItem.title = "パートを選択" 
     }
 
 
     @IBAction private func PartButtonTapped(sender:UIButton) {
+        //パート番号の受け渡しがされているか確認する。
         print(sender.tag)
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
 
+        //クイズ画面に遷移
         let quizVC = QuizViewController(nibName: "QuizViewController", bundle: nil)
         quizVC.viewModel = QuizViewModel(selectPart: sender.tag)
         navigationController?.pushViewController(quizVC, animated: true)
@@ -94,17 +96,20 @@ final class SelectPartViewController: UIViewController {
 
 
     @IBAction private func reviewButtonTapped(_ sender: Any) {
-        if viewModel.shouldPresentAlertForEmptyQuizzes() {
+
+        //問題をうまく表示できなかった場合のアラートを出す
+        if selectPartViewModel.shouldPresentAlertForEmptyQuizzes() {
             let alertController = UIAlertController(title: "エラー", message: "復習する問題がありません。", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alertController, animated: true)
             return
         }
 
-        let wrongQuizIds = viewModel.wrongQuizIds()
+
+        let wrongQuizIds = selectPartViewModel.wrongQuizIds()
 
         for quizId in wrongQuizIds {
-            if let quiz = viewModel.fetchQuiz(from: quizId) {
+            if let quiz = selectPartViewModel.fetchQuiz(from: quizId) {
                 print("Successfully fetched quiz for ID \(quizId): \(quiz.title)")
             } else {
                 print("Failed to fetch quiz for ID \(quizId)")

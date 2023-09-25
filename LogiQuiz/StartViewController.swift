@@ -16,10 +16,10 @@ final class StartViewController: UIViewController {
         }
     }
 
-    @IBOutlet private weak var informButton: UIButton! {
+    @IBOutlet private weak var sendFormButton: UIButton! {
         didSet {
-            informButton.layer.borderWidth = ButtonBorder.borderWidth
-            informButton.layer.borderColor = ButtonBorder.bordercolor
+            sendFormButton.layer.borderWidth = ButtonBorder.borderWidth
+            sendFormButton.layer.borderColor = ButtonBorder.bordercolor
         }
     }
 
@@ -32,7 +32,7 @@ final class StartViewController: UIViewController {
         navigationController?.pushViewController(selectPartVC, animated: true)
     }
 
-    @IBAction func informButtonTapped(_ sender: Any) {
+    @IBAction func sendFormButtonTapped(_ sender: Any) {
         guard let url = URL(string: "https://forms.gle/fwxyq7EJ2VjP6Ls57") else { return }
             UIApplication.shared.open(url)
     }
