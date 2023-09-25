@@ -12,6 +12,7 @@ final class QuizViewModel {
     enum Event {
         case errorOccurred(String)
         case updateUI(Quiz, isWrong: Bool)
+        case moveToResultScreen
     }
 
     private var quizzes: [Quiz] = []
@@ -101,9 +102,15 @@ final class QuizViewModel {
             correctCount += 1
         }
 
+        isCorrect ? Vibration.playcorrect() : Vibration.playincorrect()
+
         // 次の問題が存在するかを確認して、存在する場合はインデックスを更新
         currentQuizIndex += 1
-        fetchCurrentQuizAndUpdateUI()
+        if currentQuizIndex < quizzes.count {
+            fetchCurrentQuizAndUpdateUI()
+        } else {
+            eventHandler?(.moveToResultScreen) // 全ての問題が終了した際、結果表示画面に遷移するイベントをトリガー
+        }
 
         return isCorrect
     }

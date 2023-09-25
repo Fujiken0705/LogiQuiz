@@ -47,9 +47,13 @@ final class QuizViewController: UIViewController {
             let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
             present(alertController, animated: true)
-
         case .updateUI(let quiz, let isWrong):
-                updateUI(with: quiz, isWrong: isWrong)
+            updateUI(with: quiz, isWrong: isWrong)
+        case .moveToResultScreen:
+            let scoreViewController = ScoreViewController(nibName: "ScoreViewController", bundle: nil)
+            scoreViewController.correct = quizViewModel.correctCount
+            scoreViewController.questionnum = quizViewModel.currentQuizIndex
+            navigationController?.pushViewController(scoreViewController, animated: true)
         }
     }
 
@@ -68,6 +72,30 @@ final class QuizViewController: UIViewController {
     }
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
-        quizViewModel.answerSelected(at: sender.tag - 1)
+        //連続タップの無効化
+        answerButton1.isEnabled = false
+        answerButton2.isEnabled = false
+
+        let isCorrect = quizViewModel.answerSelected(at: sender.tag - 1)
+        judgeImageView.isHidden = false
+        playSound(isCorrect: isCorrect)
+        updateCorrectUI(isCorrect: isCorrect)
+
+        // 正誤判定画像の非表示の遅延処理
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+            self.judgeImageView.isHidden = true
+
+            // ボタンの再有効化
+            answerButton1.isEnabled = true
+            answerButton2.isEnabled = true
+        }
+    }
+
+    private func playSound(isCorrect: Bool) {
+        Player.play(soundURL: isCorrect ? SoundURL.correct : SoundURL.incorrect)
+    }
+
+    private func updateCorrectUI(isCorrect: Bool) {
+        judgeImageView.image = isCorrect ? Images.correct : Images.incorrect
     }
 }
