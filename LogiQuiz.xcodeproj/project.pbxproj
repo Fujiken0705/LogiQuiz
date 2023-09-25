@@ -28,7 +28,7 @@
 		D7320A872A137D97000D605C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7320A852A137D97000D605C /* LaunchScreen.storyboard */; };
 		D7320A912A138107000D605C /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7320A902A138107000D605C /* ScoreViewController.swift */; };
 		D7367C772ABEBBE5002E2839 /* ReviewQuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7367C762ABEBBE5002E2839 /* ReviewQuizService.swift */; };
-		D7367C792ABFFC9E002E2839 /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7367C782ABFFC9E002E2839 /* QuizService.swift */; };
+		D7367C792ABFFC9E002E2839 /* QuizDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7367C782ABFFC9E002E2839 /* QuizDatabaseService.swift */; };
 		D744EF3F2A430B99006B70EF /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF3E2A430B99006B70EF /* correct.png */; };
 		D744EF412A430BA2006B70EF /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = D744EF402A430BA2006B70EF /* incorrect.png */; };
 		D74F4C7A2AA1EB7800981B0A /* UIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F4C792AA1EB7800981B0A /* UIModifier.swift */; };
@@ -72,7 +72,7 @@
 		D7320A882A137D97000D605C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7320A902A138107000D605C /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		D7367C762ABEBBE5002E2839 /* ReviewQuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewQuizService.swift; sourceTree = "<group>"; };
-		D7367C782ABFFC9E002E2839 /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
+		D7367C782ABFFC9E002E2839 /* QuizDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDatabaseService.swift; sourceTree = "<group>"; };
 		D744EF3E2A430B99006B70EF /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
 		D744EF402A430BA2006B70EF /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
 		D74F4C792AA1EB7800981B0A /* UIModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModifier.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				D7367C762ABEBBE5002E2839 /* ReviewQuizService.swift */,
 				D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */,
 				D70A85D92A2A52920056198F /* QuizViewController.swift */,
-				D7367C782ABFFC9E002E2839 /* QuizService.swift */,
+				D7367C782ABFFC9E002E2839 /* QuizDatabaseService.swift */,
 				D77751662A5E28CD001093FD /* QuizViewModel.swift */,
 				D763006B2A7F6ED100BD24DC /* QuizViewController.xib */,
 				D7320A902A138107000D605C /* ScoreViewController.swift */,
@@ -268,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7320A7F2A137D91000D605C /* StartViewController.swift in Sources */,
-				D7367C792ABFFC9E002E2839 /* QuizService.swift in Sources */,
+				D7367C792ABFFC9E002E2839 /* QuizDatabaseService.swift in Sources */,
 				D7320A7B2A137D91000D605C /* AppDelegate.swift in Sources */,
 				D7D503232AB2E663003C7394 /* SelectPartViewModel.swift in Sources */,
 				D70553E52A98BBAA00CBB2F9 /* WrongQuiz.swift in Sources */,

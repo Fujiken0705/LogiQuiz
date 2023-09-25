@@ -90,7 +90,7 @@ final class SelectPartViewController: UIViewController {
 
         //クイズ画面に遷移
         let quizVC = QuizViewController(nibName: "QuizViewController", bundle: nil)
-        quizVC.viewModel = QuizViewModel(selectPart: sender.tag)
+        quizVC.quizViewModel = QuizViewModel(selectPart: sender.tag)
         navigationController?.pushViewController(quizVC, animated: true)
     }
 
@@ -117,7 +117,7 @@ final class SelectPartViewController: UIViewController {
         }
 
         let quizViewController = QuizViewController(nibName: "QuizViewController", bundle: nil)
-        quizViewController.viewModel = QuizViewModel(selectPart: 0, specificQuizIds: wrongQuizIds)
+        quizViewController.quizViewModel = QuizViewModel(selectPart: 0, specificQuizIds: wrongQuizIds)
         navigationController?.pushViewController(quizViewController, animated: true)
     }
 
