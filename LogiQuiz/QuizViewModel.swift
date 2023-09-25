@@ -88,8 +88,10 @@ final class QuizViewModel {
         guard let quiz = currentQuiz() else { return }
         if wrongQuizzes.contains(quiz.id) {
             wrongQuizzes.remove(quiz.id)
+            databaseService.removeWrongQuiz(quizId: quiz.id)
         } else {
             wrongQuizzes.insert(quiz.id)
+            databaseService.saveWrongQuiz(quizId: quiz.id)
         }
         fetchCurrentQuizAndUpdateUI()
     }
@@ -100,6 +102,9 @@ final class QuizViewModel {
         let isCorrect = quiz.correctIndex == index
         if isCorrect {
             correctCount += 1
+        } else {
+            wrongQuizzes.insert(quiz.id)
+            databaseService.saveWrongQuiz(quizId: quiz.id)
         }
 
         isCorrect ? Vibration.playcorrect() : Vibration.playincorrect()
