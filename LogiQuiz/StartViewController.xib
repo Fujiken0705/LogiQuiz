@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="LogiQuiz" customModuleProvider="target">
             <connections>
-                <outlet property="informButton" destination="JEu-9M-2fK" id="v8G-KX-Gqj"/>
+                <outlet property="sendFormButton" destination="JEu-9M-2fK" id="v8G-KX-Gqj"/>
                 <outlet property="startButton" destination="kdv-pB-vLn" id="Kdt-b8-yWG"/>
                 <outlet property="view" destination="IZJ-Kw-Cb7" id="50b-ky-noX"/>
             </connections>
@@ -51,7 +51,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="informButtonTapped:" destination="-1" eventType="touchUpInside" id="AUY-6F-ZIr"/>
+                                <action selector="sendFormButtonTapped:" destination="-1" eventType="touchUpInside" id="AUY-6F-ZIr"/>
                             </connections>
                         </button>
                     </subviews>
