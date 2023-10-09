@@ -62,13 +62,18 @@ final class QuizViewController: UIViewController {
         quizTextView.text = quiz.title
         answerButton1.setTitle(quiz.selections[0], for: .normal)
         answerButton2.setTitle(quiz.selections[1], for: .normal)
-        checkBoxButton.isSelected = isWrong
-        let imageName = checkBoxButton.isSelected ? "box_checked" : "box_unchecked"
-        checkBoxButton.setImage(UIImage(named: imageName), for: .normal)
+
+        switch quizViewModel.checkBoxState {
+        case .unchecked:
+            checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
+        case .checkedByUser, .checkedBySystem:
+            checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+            //うまく表示が切り替わらないので後日対処する
+        }
     }
 
     @IBAction func checkBoxTapped(_ sender: Any) {
-        quizViewModel.toggleWrongQuizStatus()
+        quizViewModel.toggleWrongQuizStatus(byUser: true)
     }
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {

@@ -1,5 +1,5 @@
 //
-//  QuizService.swift
+//  ReviewQuizService.swift
 //  LogiQuiz
 //
 //  Created by KentoFujita on 2023/09/23.
@@ -57,4 +57,4 @@ class ReviewQuizService {
     }
 }
 
-//Serviceクラスを導入することで、ViewModelがデータ取得や操作の詳細から切り離される→テストが容易に？？
+//DONE Serviceクラスを導入することで、ViewModelがデータ取得や操作の詳細から切り離される→テストが容易に？？

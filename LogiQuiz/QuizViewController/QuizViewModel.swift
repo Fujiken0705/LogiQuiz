@@ -15,10 +15,22 @@ final class QuizViewModel {
         case moveToResultScreen
     }
 
+    enum CheckBoxState {
+        case unchecked
+        case checkedByUser
+        case checkedBySystem
+
+        // ischeckedを変数
+        //computedpropaty
+    }
+
     private var quizzes: [Quiz] = []
     var wrongQuizzes: Set<String> = []
     var currentQuizIndex = 0
     var correctCount = 0
+
+    var checkBoxState: CheckBoxState = .unchecked
+
     var selectPart: Int
     var specificQuizIds: [String]?
     private var databaseService: QuizDatabaseService
@@ -32,46 +44,17 @@ final class QuizViewModel {
     }
 
     func loadCSV() {
-        // selectPartが0の場合でも、specificQuizIdsが指定されている場合は、全てのCSVを読み込む
-        let partsToLoad: [Int]
-        if selectPart == 0 {
-            partsToLoad = [1, 2, 3, 4, 5, 6, 7, 8]
-        } else {
-            partsToLoad = [selectPart]
-        }
-
-        for part in partsToLoad {
-            guard let filePath = Bundle.main.path(forResource: "Quiz\(part)", ofType: "csv") else {
-                eventHandler?(.errorOccurred("Failed to find the CSV file for Quiz\(part)"))
-                continue
-            }
-
-            do {
-                let csvData = try String(contentsOfFile: filePath)
-                let csvLines = csvData.components(separatedBy: .newlines)
-
-                for (index, line) in csvLines.enumerated() {
-                    let components = line.components(separatedBy: ",")
-                    if components.count >= 3 {
-                        let title = components[0]
-                        let correctIndex = (Int(components[1]) ?? 1) - 1
-                        let selections = Array(components[2...])
-                        let id = "p\(part)q\(index + 1)"
-
-                        if let specificIds = specificQuizIds, !specificIds.contains(id) {
-                            continue
-                        }
-
-                        let quiz = Quiz(id: id, title: title, selections: selections, correctIndex: correctIndex)
-                        quizzes.append(quiz)
-                    }
-                }
-            } catch {
-                eventHandler?(.errorOccurred("Failed to read the CSV file for part \(part): \(error)"))
-            }
+        do {
+            quizzes += try CsvLoader.loadCSV(part: selectPart, specificQuizIds: specificQuizIds)
+        } catch CsvLoaderError.fileNotFound {
+            eventHandler?(.errorOccurred("Failed to find the CSV file for Quiz\(selectPart)"))
+        } catch {
+            eventHandler?(.errorOccurred("Failed to read the CSV file for part \(selectPart): \(error)"))
         }
         fetchCurrentQuizAndUpdateUI()
     }
+
+    //テストを書こう,チェック機能の修正
 
     private func fetchCurrentQuizAndUpdateUI() {
         guard let quiz = currentQuiz() else { return }
@@ -84,16 +67,25 @@ final class QuizViewModel {
         return quizzes[currentQuizIndex]
     }
 
-    func toggleWrongQuizStatus() {
-        guard let quiz = currentQuiz() else { return }
-        if wrongQuizzes.contains(quiz.id) {
-            wrongQuizzes.remove(quiz.id)
-            databaseService.removeWrongQuiz(quizId: quiz.id)
-        } else {
-            wrongQuizzes.insert(quiz.id)
-            databaseService.saveWrongQuiz(quizId: quiz.id)
-        }
-        fetchCurrentQuizAndUpdateUI()
+    func toggleWrongQuizStatus(byUser: Bool) {
+            switch checkBoxState {
+            case .unchecked:
+                checkBoxState = byUser ? .checkedByUser : .checkedBySystem
+            case .checkedByUser, .checkedBySystem:
+                checkBoxState = .unchecked
+            }
+
+            //checkboxの状態に応じて処理
+            if let quiz = currentQuiz() {
+                switch checkBoxState {
+                case .unchecked:
+                    databaseService.removeWrongQuiz(quizId: quiz.id)
+                case .checkedByUser, .checkedBySystem:
+                    databaseService.saveWrongQuiz(quizId: quiz.id)
+                }
+            }
+
+            fetchCurrentQuizAndUpdateUI()
     }
 
     func answerSelected(at index: Int) -> Bool {
@@ -105,6 +97,7 @@ final class QuizViewModel {
         } else {
             wrongQuizzes.insert(quiz.id)
             databaseService.saveWrongQuiz(quizId: quiz.id)
+            toggleWrongQuizStatus(byUser: false)
         }
 
         isCorrect ? Vibration.playcorrect() : Vibration.playincorrect()

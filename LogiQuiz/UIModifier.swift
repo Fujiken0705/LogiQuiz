@@ -1,5 +1,5 @@
 //
-//  ColorSetting.swift
+//  UIModifier.swift
 //  LogiQuiz
 //
 //  Created by KentoFujita on 2023/09/01.
