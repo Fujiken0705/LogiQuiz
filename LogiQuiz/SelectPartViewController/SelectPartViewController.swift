@@ -14,6 +14,7 @@ final class SelectPartViewController: UIViewController {
         didSet {
             part1Button.layer.borderWidth = ButtonBorder.borderWidth
             part1Button.layer.borderColor = ButtonBorder.bordercolor
+            part1Button.accessibilityIdentifier = "part1Button"
         }
     }
 

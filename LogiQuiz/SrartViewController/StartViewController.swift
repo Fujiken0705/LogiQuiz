@@ -25,6 +25,7 @@ final class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        startButton.accessibilityIdentifier = "startButton"
     }
 
     @IBAction private func startButtonTapped(_ sender: UIButton) {
