@@ -20,6 +20,7 @@ final class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        judgeImageView.isHidden = true
         quizViewModel.eventHandler = { [weak self] event in
             DispatchQueue.main.async {
                 self?.handle(event: event)
@@ -65,17 +66,11 @@ final class QuizViewController: UIViewController {
         answerButton1.setTitle(quiz.selections[0], for: .normal)
         answerButton2.setTitle(quiz.selections[1], for: .normal)
 
-        switch quizViewModel.checkBoxState {
-        case .unchecked:
-            checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
-        case .checkedByUser, .checkedBySystem:
+        if quizViewModel.isChecked {
             checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
-            //うまく表示が切り替わらないので後日対処する
+        } else {
+            checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
         }
-    }
-
-    @IBAction func checkBoxTapped(_ sender: Any) {
-        quizViewModel.toggleWrongQuizStatus(byUser: true)
     }
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
@@ -84,9 +79,11 @@ final class QuizViewController: UIViewController {
         answerButton2.isEnabled = false
 
         let isCorrect = quizViewModel.answerSelected(at: sender.tag - 1)
+
+        // 正誤の画像を表示
+        updateCorrectUI(isCorrect: isCorrect)
         judgeImageView.isHidden = false
         playSound(isCorrect: isCorrect)
-        updateCorrectUI(isCorrect: isCorrect)
 
         // 正誤判定画像の非表示の遅延処理
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
