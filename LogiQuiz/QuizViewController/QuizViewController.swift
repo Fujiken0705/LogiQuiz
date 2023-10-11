@@ -31,6 +31,8 @@ final class QuizViewController: UIViewController {
             let isWrong = quizViewModel.wrongQuizzes.contains(quiz.id)
             updateUI(with: quiz, isWrong: isWrong)
         }
+
+        quizTextView.accessibilityIdentifier = "quizTextView"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -38,6 +38,11 @@
 		D74F4C842AA2E07200981B0A /* Quiz7.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C832AA2E07200981B0A /* Quiz7.csv */; };
 		D74F4C862AA2E09A00981B0A /* Quiz8.csv in Resources */ = {isa = PBXBuildFile; fileRef = D74F4C852AA2E09A00981B0A /* Quiz8.csv */; };
 		D7629F8B2AD11274002D44E7 /* CsvLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7629F8A2AD11274002D44E7 /* CsvLoader.swift */; };
+		D7629F932AD53726002D44E7 /* LogiQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7629F922AD53726002D44E7 /* LogiQuizUITests.swift */; };
+		D7629F952AD53726002D44E7 /* LogiQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7629F942AD53726002D44E7 /* LogiQuizUITestsLaunchTests.swift */; };
+		D7629FA22AD5375D002D44E7 /* LogiQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7629FA12AD5375D002D44E7 /* LogiQuizTests.swift */; };
+		D7629FAA2AD53EAA002D44E7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D7629FA92AD53EAA002D44E7 /* Realm */; };
+		D7629FAC2AD53EAE002D44E7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D7629FAB2AD53EAE002D44E7 /* RealmSwift */; };
 		D76300662A7F67BE00BD24DC /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76300652A7F67BE00BD24DC /* StartViewController.xib */; };
 		D763006A2A7F6E2500BD24DC /* SelectPartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */; };
 		D763006C2A7F6ED100BD24DC /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D763006B2A7F6ED100BD24DC /* QuizViewController.xib */; };
@@ -50,6 +55,23 @@
 		D7E646132A69277700511457 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E646122A69277700511457 /* Images.swift */; };
 		D7E646152A6927CC00511457 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E646142A6927CC00511457 /* Vibration.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7629F962AD53726002D44E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7320A6F2A137D91000D605C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7320A762A137D91000D605C;
+			remoteInfo = LogiQuiz;
+		};
+		D7629FA32AD5375D002D44E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7320A6F2A137D91000D605C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7320A762A137D91000D605C;
+			remoteInfo = LogiQuiz;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D70053432A480AF00092B971 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -83,6 +105,11 @@
 		D74F4C832AA2E07200981B0A /* Quiz7.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz7.csv; sourceTree = "<group>"; };
 		D74F4C852AA2E09A00981B0A /* Quiz8.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Quiz8.csv; sourceTree = "<group>"; };
 		D7629F8A2AD11274002D44E7 /* CsvLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvLoader.swift; sourceTree = "<group>"; };
+		D7629F902AD53726002D44E7 /* LogiQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogiQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7629F922AD53726002D44E7 /* LogiQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogiQuizUITests.swift; sourceTree = "<group>"; };
+		D7629F942AD53726002D44E7 /* LogiQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogiQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D7629F9F2AD5375C002D44E7 /* LogiQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogiQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7629FA12AD5375D002D44E7 /* LogiQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogiQuizTests.swift; sourceTree = "<group>"; };
 		D76300652A7F67BE00BD24DC /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		D76300692A7F6E2500BD24DC /* SelectPartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPartViewController.xib; sourceTree = "<group>"; };
 		D763006B2A7F6ED100BD24DC /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
@@ -106,6 +133,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7629F8D2AD53726002D44E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7629F9C2AD5375C002D44E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7629FAC2AD53EAE002D44E7 /* RealmSwift in Frameworks */,
+				D7629FAA2AD53EAA002D44E7 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -113,7 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				D7320A792A137D91000D605C /* LogiQuiz */,
+				D7629F912AD53726002D44E7 /* LogiQuizUITests */,
+				D7629FA02AD5375D002D44E7 /* LogiQuizTests */,
 				D7320A782A137D91000D605C /* Products */,
+				D7629FA82AD53EAA002D44E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				D7320A772A137D91000D605C /* LogiQuiz.app */,
+				D7629F902AD53726002D44E7 /* LogiQuizUITests.xctest */,
+				D7629F9F2AD5375C002D44E7 /* LogiQuizTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +253,30 @@
 			path = " ScoreViewController";
 			sourceTree = "<group>";
 		};
+		D7629F912AD53726002D44E7 /* LogiQuizUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D7629F922AD53726002D44E7 /* LogiQuizUITests.swift */,
+				D7629F942AD53726002D44E7 /* LogiQuizUITestsLaunchTests.swift */,
+			);
+			path = LogiQuizUITests;
+			sourceTree = "<group>";
+		};
+		D7629FA02AD5375D002D44E7 /* LogiQuizTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7629FA12AD5375D002D44E7 /* LogiQuizTests.swift */,
+			);
+			path = LogiQuizTests;
+			sourceTree = "<group>";
+		};
+		D7629FA82AD53EAA002D44E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +301,46 @@
 			productReference = D7320A772A137D91000D605C /* LogiQuiz.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D7629F8F2AD53726002D44E7 /* LogiQuizUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7629F9A2AD53726002D44E7 /* Build configuration list for PBXNativeTarget "LogiQuizUITests" */;
+			buildPhases = (
+				D7629F8C2AD53726002D44E7 /* Sources */,
+				D7629F8D2AD53726002D44E7 /* Frameworks */,
+				D7629F8E2AD53726002D44E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7629F972AD53726002D44E7 /* PBXTargetDependency */,
+			);
+			name = LogiQuizUITests;
+			productName = LogiQuizUITests;
+			productReference = D7629F902AD53726002D44E7 /* LogiQuizUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D7629F9E2AD5375C002D44E7 /* LogiQuizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7629FA52AD5375D002D44E7 /* Build configuration list for PBXNativeTarget "LogiQuizTests" */;
+			buildPhases = (
+				D7629F9B2AD5375C002D44E7 /* Sources */,
+				D7629F9C2AD5375C002D44E7 /* Frameworks */,
+				D7629F9D2AD5375C002D44E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7629FA42AD5375D002D44E7 /* PBXTargetDependency */,
+			);
+			name = LogiQuizTests;
+			packageProductDependencies = (
+				D7629FA92AD53EAA002D44E7 /* Realm */,
+				D7629FAB2AD53EAE002D44E7 /* RealmSwift */,
+			);
+			productName = LogiQuizTests;
+			productReference = D7629F9F2AD5375C002D44E7 /* LogiQuizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,11 +348,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					D7320A762A137D91000D605C = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					D7629F8F2AD53726002D44E7 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = D7320A762A137D91000D605C;
+					};
+					D7629F9E2AD5375C002D44E7 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = D7320A762A137D91000D605C;
 					};
 				};
 			};
@@ -261,6 +381,8 @@
 			projectRoot = "";
 			targets = (
 				D7320A762A137D91000D605C /* LogiQuiz */,
+				D7629F8F2AD53726002D44E7 /* LogiQuizUITests */,
+				D7629F9E2AD5375C002D44E7 /* LogiQuizTests */,
 			);
 		};
 /* End PBXProject section */
@@ -295,6 +417,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7629F8E2AD53726002D44E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7629F9D2AD5375C002D44E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,7 +459,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7629F8C2AD53726002D44E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7629F952AD53726002D44E7 /* LogiQuizUITestsLaunchTests.swift in Sources */,
+				D7629F932AD53726002D44E7 /* LogiQuizUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7629F9B2AD5375C002D44E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7629FA22AD5375D002D44E7 /* LogiQuizTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7629F972AD53726002D44E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7320A762A137D91000D605C /* LogiQuiz */;
+			targetProxy = D7629F962AD53726002D44E7 /* PBXContainerItemProxy */;
+		};
+		D7629FA42AD5375D002D44E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7320A762A137D91000D605C /* LogiQuiz */;
+			targetProxy = D7629FA32AD5375D002D44E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D7320A852A137D97000D605C /* LaunchScreen.storyboard */ = {
@@ -519,6 +685,76 @@
 			};
 			name = Release;
 		};
+		D7629F982AD53726002D44E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.LogiQuizUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LogiQuiz;
+			};
+			name = Debug;
+		};
+		D7629F992AD53726002D44E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.LogiQuizUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LogiQuiz;
+			};
+			name = Release;
+		};
+		D7629FA62AD5375D002D44E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.LogiQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogiQuiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LogiQuiz";
+			};
+			name = Debug;
+		};
+		D7629FA72AD5375D002D44E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fujiken.LogiQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogiQuiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LogiQuiz";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -536,6 +772,24 @@
 			buildConfigurations = (
 				D7320A8C2A137D97000D605C /* Debug */,
 				D7320A8D2A137D97000D605C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7629F9A2AD53726002D44E7 /* Build configuration list for PBXNativeTarget "LogiQuizUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7629F982AD53726002D44E7 /* Debug */,
+				D7629F992AD53726002D44E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7629FA52AD5375D002D44E7 /* Build configuration list for PBXNativeTarget "LogiQuizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7629FA62AD5375D002D44E7 /* Debug */,
+				D7629FA72AD5375D002D44E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -560,6 +814,16 @@
 			productName = Realm;
 		};
 		D70553ED2A9B9CF100CBB2F9 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D70553EA2A9B9CF100CBB2F9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		D7629FA92AD53EAA002D44E7 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D70553EA2A9B9CF100CBB2F9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D7629FAB2AD53EAE002D44E7 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D70553EA2A9B9CF100CBB2F9 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
