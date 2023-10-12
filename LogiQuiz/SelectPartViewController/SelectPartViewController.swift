@@ -122,4 +122,6 @@ final class SelectPartViewController: UIViewController {
         navigationController?.pushViewController(quizViewController, animated: true)
     }
 
+    //styleButtonみたいな関数を使ってまとめることができそうだがViewDidLoadに書くので時間かかりそう？
+
 }

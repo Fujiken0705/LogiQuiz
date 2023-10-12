@@ -18,6 +18,7 @@ final class LogiQuizUITests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
+    //　パート1一問目のテキストが正しく表示されているか確認するテスト
     func testQuiz1Question1IsDisplayed() {
         // アプリの起動
         let app = XCUIApplication()
@@ -33,13 +34,13 @@ final class LogiQuizUITests: XCTestCase {
         XCTAssert(part1Button.exists, "Part1 button does not exist.")
         part1Button.tap()
 
-        // パート1一問目のテキストが正しく表示されているか確認
+        // 確認
         let expectedQuestionText = "直接貿易には、代理店契約や販売店契約を結び、現地での買い付けや販売を現地の企業に代行してもらう形態もある。"
         let quizTextView = app.textViews["quizTextView"]
         XCTAssert(quizTextView.exists, "Quiz TextView does not exist.")
         XCTAssert(quizTextView.value as! String == expectedQuestionText, "Displayed question text does not match expected text.")
     }
-    //
+    //これでいいのかな
 
 
     override func tearDownWithError() throws {

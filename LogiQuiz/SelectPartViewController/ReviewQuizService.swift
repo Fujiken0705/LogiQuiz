@@ -58,3 +58,4 @@ class ReviewQuizService {
 }
 
 //DONE Serviceクラスを導入することで、ViewModelがデータ取得や操作の詳細から切り離される→テストが容易に？？
+// Realmのエラーハンドリングが必要？
