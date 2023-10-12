@@ -15,21 +15,12 @@ final class QuizViewModel {
         case moveToResultScreen
     }
 
-    enum CheckBoxState {
-        case unchecked
-        case checkedByUser
-        case checkedBySystem
-
-        // ischeckedを変数
-        //computedpropaty
-    }
-
     private var quizzes: [Quiz] = []
     var wrongQuizzes: Set<String> = []
     var currentQuizIndex = 0
     var correctCount = 0
 
-    var checkBoxState: CheckBoxState = .unchecked
+    var isChecked: Bool = false
 
     var selectPart: Int
     var specificQuizIds: [String]?
@@ -45,7 +36,11 @@ final class QuizViewModel {
 
     func loadCSV() {
         do {
-            quizzes += try CsvLoader.loadCSV(part: selectPart, specificQuizIds: specificQuizIds)
+            if let specificQuizIds = self.specificQuizIds {
+                quizzes += try CsvLoader.loadCSV(mode: .review, specificQuizIds: specificQuizIds)
+            } else {
+                quizzes += try CsvLoader.loadCSV(mode: .normal(part: selectPart))
+            }
         } catch CsvLoaderError.fileNotFound {
             eventHandler?(.errorOccurred("Failed to find the CSV file for Quiz\(selectPart)"))
         } catch {
@@ -58,58 +53,60 @@ final class QuizViewModel {
 
     private func fetchCurrentQuizAndUpdateUI() {
         guard let quiz = currentQuiz() else { return }
+        isChecked = false
         let isWrong = wrongQuizzes.contains(quiz.id)
         eventHandler?(.updateUI(quiz, isWrong: isWrong))
     }
+
 
     func currentQuiz() -> Quiz? {
         guard currentQuizIndex < quizzes.count else { return nil }
         return quizzes[currentQuizIndex]
     }
 
-    func toggleWrongQuizStatus(byUser: Bool) {
-            switch checkBoxState {
-            case .unchecked:
-                checkBoxState = byUser ? .checkedByUser : .checkedBySystem
-            case .checkedByUser, .checkedBySystem:
-                checkBoxState = .unchecked
-            }
+    func toggleWrongQuizStatusForIncorrectAnswer() {
+        isChecked = true
+        if let quiz = currentQuiz() {
+            // ここでUIの更新をトリガーする
+            eventHandler?(.updateUI(quiz, isWrong: true))
+            databaseService.saveWrongQuiz(quizId: quiz.id)
+        }
 
-            //checkboxの状態に応じて処理
-            if let quiz = currentQuiz() {
-                switch checkBoxState {
-                case .unchecked:
-                    databaseService.removeWrongQuiz(quizId: quiz.id)
-                case .checkedByUser, .checkedBySystem:
-                    databaseService.saveWrongQuiz(quizId: quiz.id)
-                }
+        // 0.5秒後にチェックを外す
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.isChecked = false
+            if let quiz = self?.currentQuiz() {
+                self?.eventHandler?(.updateUI(quiz, isWrong: false))
             }
-
-            fetchCurrentQuizAndUpdateUI()
+        }
     }
 
     func answerSelected(at index: Int) -> Bool {
         guard let quiz = currentQuiz() else { return false }
-
         let isCorrect = quiz.correctIndex == index
-        if isCorrect {
-            correctCount += 1
+
+        if !isCorrect {
+            isChecked = true
+            toggleWrongQuizStatusForIncorrectAnswer()
         } else {
-            wrongQuizzes.insert(quiz.id)
-            databaseService.saveWrongQuiz(quizId: quiz.id)
-            toggleWrongQuizStatus(byUser: false)
+            correctCount += 1
         }
 
         isCorrect ? Vibration.playcorrect() : Vibration.playincorrect()
 
-        // 次の問題が存在するかを確認して、存在する場合はインデックスを更新
-        currentQuizIndex += 1
-        if currentQuizIndex < quizzes.count {
-            fetchCurrentQuizAndUpdateUI()
-        } else {
-            eventHandler?(.moveToResultScreen) // 全ての問題が終了した際、結果表示画面に遷移するイベントをトリガー
+        // 0.5秒後に次の問題に進む
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.currentQuizIndex += 1
+            if self?.currentQuizIndex ?? 0 < self?.quizzes.count ?? 0 {
+                self?.fetchCurrentQuizAndUpdateUI()
+            } else {
+                self?.eventHandler?(.moveToResultScreen)
+            }
         }
-
         return isCorrect
+    }
+
+    func removeWrongQuiz(quizId: String) {
+            databaseService.removeWrongQuiz(quizId: quizId)
     }
 }

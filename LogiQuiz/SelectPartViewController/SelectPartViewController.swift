@@ -80,7 +80,7 @@ final class SelectPartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "パートを選択" 
+        navigationItem.title = "パートを選択"
     }
 
 

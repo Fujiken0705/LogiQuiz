@@ -20,6 +20,7 @@ final class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        judgeImageView.isHidden = true
         quizViewModel.eventHandler = { [weak self] event in
             DispatchQueue.main.async {
                 self?.handle(event: event)
@@ -33,6 +34,7 @@ final class QuizViewController: UIViewController {
         }
 
         quizTextView.accessibilityIdentifier = "quizTextView"
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,22 +62,17 @@ final class QuizViewController: UIViewController {
     }
 
     private func updateUI(with quiz: Quiz, isWrong: Bool) {
-        quizNumberLabel.text = "問題 \(quizViewModel.currentQuizIndex + 1)"
-        quizTextView.text = quiz.title
-        answerButton1.setTitle(quiz.selections[0], for: .normal)
-        answerButton2.setTitle(quiz.selections[1], for: .normal)
+            quizNumberLabel.text = "問題 \(quizViewModel.currentQuizIndex + 1)"
+            quizTextView.text = quiz.title
+            answerButton1.setTitle(quiz.selections[0], for: .normal)
+            answerButton2.setTitle(quiz.selections[1], for: .normal)
 
-        switch quizViewModel.checkBoxState {
-        case .unchecked:
-            checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
-        case .checkedByUser, .checkedBySystem:
-            checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
-            //うまく表示が切り替わらないので後日対処する
-        }
-    }
-
-    @IBAction func checkBoxTapped(_ sender: Any) {
-        quizViewModel.toggleWrongQuizStatus(byUser: true)
+            // 現在のクイズが間違ったクイズリストに含まれているかどうかでチェックボックスの状態を更新
+            if isWrong {
+                checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+            } else {
+                checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
+            }
     }
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
@@ -84,9 +81,15 @@ final class QuizViewController: UIViewController {
         answerButton2.isEnabled = false
 
         let isCorrect = quizViewModel.answerSelected(at: sender.tag - 1)
+
+        if isCorrect, let currentQuiz = quizViewModel.currentQuiz() {
+            quizViewModel.removeWrongQuiz(quizId: currentQuiz.id)
+        }
+
+        // 正誤の画像を表示
+        updateCorrectUI(isCorrect: isCorrect)
         judgeImageView.isHidden = false
         playSound(isCorrect: isCorrect)
-        updateCorrectUI(isCorrect: isCorrect)
 
         // 正誤判定画像の非表示の遅延処理
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
