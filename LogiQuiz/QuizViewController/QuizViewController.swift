@@ -26,7 +26,9 @@ final class QuizViewController: UIViewController {
                 self?.handle(event: event)
             }
         }
+        print("About to load CSV")  // <-- 追加
         quizViewModel.loadCSV()
+        print("Finished loading CSV")  // <-- 追加
 
         if let quiz = quizViewModel.currentQuiz() {
             let isWrong = quizViewModel.wrongQuizzes.contains(quiz.id)

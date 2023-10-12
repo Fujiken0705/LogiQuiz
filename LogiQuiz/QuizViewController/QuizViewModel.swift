@@ -36,7 +36,11 @@ final class QuizViewModel {
 
     func loadCSV() {
         do {
-            quizzes += try CsvLoader.loadCSV(part: selectPart, specificQuizIds: specificQuizIds)
+            if let specificQuizIds = self.specificQuizIds {
+                quizzes += try CsvLoader.loadCSV(mode: .review, specificQuizIds: specificQuizIds)
+            } else {
+                quizzes += try CsvLoader.loadCSV(mode: .normal(part: selectPart))
+            }
         } catch CsvLoaderError.fileNotFound {
             eventHandler?(.errorOccurred("Failed to find the CSV file for Quiz\(selectPart)"))
         } catch {

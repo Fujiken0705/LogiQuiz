@@ -10,18 +10,36 @@ import Foundation
 class CsvLoader {
 
     static func findCSVFiles() -> [String] {
-            let fileManager = FileManager.default
-            guard let resourcePath = Bundle.main.resourcePath else { return [] }
+        let fileManager = FileManager.default
+        guard let resourcePath = Bundle.main.resourcePath else { return [] }
 
-            do {
-                let files = try fileManager.contentsOfDirectory(atPath: resourcePath)
-                return files.filter { $0.hasSuffix(".csv") }
-            } catch {
-                return []
-            }
+        do {
+            let files = try fileManager.contentsOfDirectory(atPath: resourcePath)
+            return files.filter { $0.hasSuffix(".csv") }
+        } catch {
+            return []
         }
+    }
+
+    static func loadCSV(mode: QuizMode, specificQuizIds: [String]? = nil) throws -> [Quiz] {
+            var quizzes: [Quiz] = []
+
+            switch mode {
+            case .normal(let part):
+                quizzes = try loadCSVFromFile(part: part, specificQuizIds: specificQuizIds)
+            case .review:
+                let allCSVFiles = findCSVFiles()
+                for file in allCSVFiles {
+                    if let partNumber = Int(file.replacingOccurrences(of: "Quiz", with: "").replacingOccurrences(of: ".csv", with: "")) {
+                        quizzes += try loadCSVFromFile(part: partNumber, specificQuizIds: specificQuizIds)
+                    }
+                }
+            }
+
+            return quizzes
+    }
     
-    static func loadCSV(part: Int, specificQuizIds: [String]? = nil) throws -> [Quiz] {
+    private static func loadCSVFromFile(part: Int, specificQuizIds: [String]? = nil) throws -> [Quiz] {
         var quizzes: [Quiz] = []
 
         guard let filePath = Bundle.main.path(forResource: "Quiz\(part)", ofType: "csv") else {
@@ -54,4 +72,9 @@ class CsvLoader {
 
 enum CsvLoaderError: Error {
     case fileNotFound
+}
+
+enum QuizMode {
+    case normal(part: Int)
+    case review
 }

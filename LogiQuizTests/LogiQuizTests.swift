@@ -45,7 +45,7 @@ final class LogiQuizTests: XCTestCase {
 //     CSVファイルの内容を正しく読み込むテスト
     func testLoadCSV() {
         do {
-            let quizzes = try CsvLoader.loadCSV(part: 1)
+            let quizzes = try CsvLoader.loadCSVFromFile(part: 1)
             XCTAssertNotNil(quizzes)
             XCTAssertEqual(quizzes.count,12)
         } catch {
@@ -56,7 +56,7 @@ final class LogiQuizTests: XCTestCase {
     // 3. エラー処理のテスト
     func testLoadCSVFileNotFound() {
         do {
-            _ = try CsvLoader.loadCSV(part: 9999) // 存在しないパート番号を指定
+            _ = try CsvLoader.loadCSVFromFile(part: 9999) // 存在しないパート番号を指定
             XCTFail("Expected error but got no error")
         } catch CsvLoaderError.fileNotFound {
             // 期待したエラーがスローされた
