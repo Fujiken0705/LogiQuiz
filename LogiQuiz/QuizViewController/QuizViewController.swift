@@ -26,9 +26,7 @@ final class QuizViewController: UIViewController {
                 self?.handle(event: event)
             }
         }
-        print("About to load CSV")  // <-- 追加
         quizViewModel.loadCSV()
-        print("Finished loading CSV")  // <-- 追加
 
         if let quiz = quizViewModel.currentQuiz() {
             let isWrong = quizViewModel.wrongQuizzes.contains(quiz.id)
@@ -36,6 +34,7 @@ final class QuizViewController: UIViewController {
         }
 
         quizTextView.accessibilityIdentifier = "quizTextView"
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,16 +62,17 @@ final class QuizViewController: UIViewController {
     }
 
     private func updateUI(with quiz: Quiz, isWrong: Bool) {
-        quizNumberLabel.text = "問題 \(quizViewModel.currentQuizIndex + 1)"
-        quizTextView.text = quiz.title
-        answerButton1.setTitle(quiz.selections[0], for: .normal)
-        answerButton2.setTitle(quiz.selections[1], for: .normal)
+            quizNumberLabel.text = "問題 \(quizViewModel.currentQuizIndex + 1)"
+            quizTextView.text = quiz.title
+            answerButton1.setTitle(quiz.selections[0], for: .normal)
+            answerButton2.setTitle(quiz.selections[1], for: .normal)
 
-        if quizViewModel.isChecked {
-            checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
-        } else {
-            checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
-        }
+            // 現在のクイズが間違ったクイズリストに含まれているかどうかでチェックボックスの状態を更新
+            if isWrong {
+                checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+            } else {
+                checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
+            }
     }
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
@@ -81,6 +81,10 @@ final class QuizViewController: UIViewController {
         answerButton2.isEnabled = false
 
         let isCorrect = quizViewModel.answerSelected(at: sender.tag - 1)
+
+        if isCorrect, let currentQuiz = quizViewModel.currentQuiz() {
+            quizViewModel.removeWrongQuiz(quizId: currentQuiz.id)
+        }
 
         // 正誤の画像を表示
         updateCorrectUI(isCorrect: isCorrect)

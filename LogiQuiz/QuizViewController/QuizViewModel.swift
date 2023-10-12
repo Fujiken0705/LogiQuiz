@@ -105,4 +105,8 @@ final class QuizViewModel {
         }
         return isCorrect
     }
+
+    func removeWrongQuiz(quizId: String) {
+            databaseService.removeWrongQuiz(quizId: quizId)
+    }
 }
