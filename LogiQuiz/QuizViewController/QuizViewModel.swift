@@ -20,6 +20,7 @@ final class QuizViewModel {
     var currentQuizIndex = 0
     var correctCount = 0
 
+    //18-27まで変数をstructにまとめる
     var isChecked: Bool = false
 
     var selectPart: Int
@@ -43,13 +44,12 @@ final class QuizViewModel {
             }
         } catch CsvLoaderError.fileNotFound {
             eventHandler?(.errorOccurred("Failed to find the CSV file for Quiz\(selectPart)"))
+            //アラートで出す(tryの後は何かしら表示する)
         } catch {
             eventHandler?(.errorOccurred("Failed to read the CSV file for part \(selectPart): \(error)"))
         }
         fetchCurrentQuizAndUpdateUI()
     }
-
-    //テストを書こう,チェック機能の修正
 
     private func fetchCurrentQuizAndUpdateUI() {
         guard let quiz = currentQuiz() else { return }

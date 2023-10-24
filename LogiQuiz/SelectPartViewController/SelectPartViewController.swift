@@ -81,6 +81,7 @@ final class SelectPartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "パートを選択"
+        
     }
 
 
@@ -121,5 +122,7 @@ final class SelectPartViewController: UIViewController {
         quizViewController.quizViewModel = QuizViewModel(selectPart: 0, specificQuizIds: wrongQuizIds)
         navigationController?.pushViewController(quizViewController, animated: true)
     }
+
+    //styleButtonみたいな関数を使ってまとめることができそうだがViewDidLoadに書くので時間かかりそう？
 
 }

@@ -34,26 +34,42 @@ final class LogiQuizTests: XCTestCase {
         }
     }
 
-    // CSVファイルの名前を取得するテスト
+    // Quiz1からQuiz8までのCSVファイルが存在するかを確認
     func testFindCSVFiles() {
         let csvFiles = CsvLoader.findCSVFiles()
         XCTAssertNotNil(csvFiles) // 結果がnilでないことを確認
-        XCTAssertTrue(csvFiles.contains("Quiz1.csv")) // "Quiz1.csv"という名前のファイルが存在するかを確認
-        // TODO:追加しよう
-    }
-
-//     CSVファイルの内容を正しく読み込むテスト
-    func testLoadCSV() {
-        do {
-            let quizzes = try CsvLoader.loadCSVFromFile(part: 1)
-            XCTAssertNotNil(quizzes)
-            XCTAssertEqual(quizzes.count,12)
-        } catch {
-            XCTFail("Failed to load CSV: \(error)")
+        for i in 1...8 {
+            XCTAssertTrue(csvFiles.contains("Quiz\(i).csv"))
         }
     }
 
-    // 3. エラー処理のテスト
+//  読み込んだ問題数が正しいかテスト
+    func testLoadCSV() {
+        let expectedQuizCounts: [Int: Int] = [
+            1: 12,
+            2: 10,
+            3: 10,
+            4: 10,
+            5: 9,
+            6: 9,
+            7: 10,
+            8: 10,
+        ]
+
+        for (part, expectedCount) in expectedQuizCounts {
+            do {
+                let quizzes = try CsvLoader.loadCSVFromFile(part: part)
+                //Nil消す
+                XCTAssertNotNil(quizzes)
+                XCTAssertEqual(quizzes.count, expectedCount, "Expected \(expectedCount) quizzes for Quiz\(part), but got \(quizzes.count).")
+            } catch {
+                XCTFail("Failed to load CSV for Quiz\(part): \(error)")
+            }
+        }
+    }
+    //throwの場合はnil不要？？
+
+    // エラー処理のテスト
     func testLoadCSVFileNotFound() {
         do {
             _ = try CsvLoader.loadCSVFromFile(part: 9999) // 存在しないパート番号を指定
@@ -65,5 +81,5 @@ final class LogiQuizTests: XCTestCase {
         }
     }
 
-
+    //TODO:Mockを作成してRealmでの保存や削除がうまく行われているかテストする
 }

@@ -39,7 +39,7 @@ class CsvLoader {
             return quizzes
     }
     
-    private static func loadCSVFromFile(part: Int, specificQuizIds: [String]? = nil) throws -> [Quiz] {
+    static func loadCSVFromFile(part: Int, specificQuizIds: [String]? = nil) throws -> [Quiz] {
         var quizzes: [Quiz] = []
 
         guard let filePath = Bundle.main.path(forResource: "Quiz\(part)", ofType: "csv") else {
@@ -65,6 +65,8 @@ class CsvLoader {
                 quizzes.append(quiz)
             }
         }
+
+        //map使えると良さそう、配列にどのような操作ができるか
 
         return quizzes
     }
