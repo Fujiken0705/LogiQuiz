@@ -40,7 +40,9 @@ final class LogiQuizUITests: XCTestCase {
         XCTAssert(quizTextView.exists, "Quiz TextView does not exist.")
         XCTAssert(quizTextView.value as! String == expectedQuestionText, "Displayed question text does not match expected text.")
     }
+
     //これでいいのかな
+    //ボタンの数、UITest、Outlet未接続のクラッシュ防止
 
 
     override func tearDownWithError() throws {

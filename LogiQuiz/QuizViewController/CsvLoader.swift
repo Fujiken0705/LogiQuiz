@@ -66,6 +66,8 @@ class CsvLoader {
             }
         }
 
+        //map使えると良さそう、配列にどのような操作ができるか
+
         return quizzes
     }
 }

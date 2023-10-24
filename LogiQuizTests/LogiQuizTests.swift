@@ -59,6 +59,7 @@ final class LogiQuizTests: XCTestCase {
         for (part, expectedCount) in expectedQuizCounts {
             do {
                 let quizzes = try CsvLoader.loadCSVFromFile(part: part)
+                //Nil消す
                 XCTAssertNotNil(quizzes)
                 XCTAssertEqual(quizzes.count, expectedCount, "Expected \(expectedCount) quizzes for Quiz\(part), but got \(quizzes.count).")
             } catch {
@@ -66,6 +67,7 @@ final class LogiQuizTests: XCTestCase {
             }
         }
     }
+    //throwの場合はnil不要？？
 
     // エラー処理のテスト
     func testLoadCSVFileNotFound() {
