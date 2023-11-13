@@ -9,23 +9,14 @@ import UIKit
 
 final class StartViewController: UIViewController {
 
-    @IBOutlet private weak var startButton: UIButton! {
-        didSet {
-            startButton.layer.borderWidth = ButtonBorder.borderWidth
-            startButton.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-    @IBOutlet private weak var sendFormButton: UIButton! {
-        didSet {
-            sendFormButton.layer.borderWidth = ButtonBorder.borderWidth
-            sendFormButton.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
+    @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet private weak var sendFormButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.accessibilityIdentifier = "startButton"
+        startButton.applyStandardStyle()
+        sendFormButton.applyStandardStyle()
     }
 
     @IBAction private func startButtonTapped(_ sender: UIButton) {
