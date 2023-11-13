@@ -10,70 +10,15 @@ import RealmSwift
 
 final class SelectPartViewController: UIViewController {
 
-    @IBOutlet private weak var part1Button: UIButton! {
-        didSet {
-            part1Button.layer.borderWidth = ButtonBorder.borderWidth
-            part1Button.layer.borderColor = ButtonBorder.bordercolor
-            part1Button.accessibilityIdentifier = "part1Button"
-        }
-    }
-
-    @IBOutlet private weak var part2Button: UIButton! {
-        didSet {
-            part2Button.layer.borderWidth = ButtonBorder.borderWidth
-            part2Button.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-
-    @IBOutlet private weak var part3Button: UIButton! {
-        didSet {
-            part3Button.layer.borderWidth = ButtonBorder.borderWidth
-            part3Button.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-    @IBOutlet weak var part4Button: UIButton! {
-        didSet {
-            part4Button.layer.borderWidth = ButtonBorder.borderWidth
-            part4Button.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-    @IBOutlet weak var part5Button: UIButton! {
-        didSet {
-            part5Button.layer.borderWidth = ButtonBorder.borderWidth
-            part5Button.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-    @IBOutlet weak var part6Button: UIButton! {
-        didSet {
-            part6Button.layer.borderWidth = ButtonBorder.borderWidth
-            part6Button.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-    @IBOutlet weak var part7Button: UIButton! {
-        didSet {
-            part7Button.layer.borderWidth = ButtonBorder.borderWidth
-            part7Button.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-    @IBOutlet weak var part8Button: UIButton! {
-        didSet {
-            part8Button.layer.borderWidth = ButtonBorder.borderWidth
-            part8Button.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
-
-    @IBOutlet private weak var reviewButton: UIButton! {
-        didSet {
-            reviewButton.layer.borderWidth = ButtonBorder.borderWidth
-            reviewButton.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
+    @IBOutlet private weak var part1Button: UIButton!
+    @IBOutlet private weak var part2Button: UIButton!
+    @IBOutlet private weak var part3Button: UIButton!
+    @IBOutlet private weak var part4Button: UIButton!
+    @IBOutlet private weak var part5Button: UIButton!
+    @IBOutlet private weak var part6Button: UIButton!
+    @IBOutlet private weak var part7Button: UIButton!
+    @IBOutlet private weak var part8Button: UIButton!
+    @IBOutlet private weak var reviewButton: UIButton!
 
 
     private var selectPartViewModel = SelectPartViewModel()
@@ -81,7 +26,20 @@ final class SelectPartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "パートを選択"
-        
+
+        setupButtons()
+    }
+
+    private func setupButtons() {
+        part1Button.applyStandardStyle()
+        part2Button.applyStandardStyle()
+        part3Button.applyStandardStyle()
+        part4Button.applyStandardStyle()
+        part5Button.applyStandardStyle()
+        part6Button.applyStandardStyle()
+        part7Button.applyStandardStyle()
+        part8Button.applyStandardStyle()
+        reviewButton.applyStandardStyle()
     }
 
 
@@ -122,7 +80,4 @@ final class SelectPartViewController: UIViewController {
         quizViewController.quizViewModel = QuizViewModel(selectPart: 0, specificQuizIds: wrongQuizIds)
         navigationController?.pushViewController(quizViewController, animated: true)
     }
-
-    //styleButtonみたいな関数を使ってまとめることができそうだがViewDidLoadに書くので時間かかりそう？
-
 }

@@ -179,7 +179,7 @@
 				D7367C7C2AC2AE8E002E2839 /* SrartViewController */,
 				D7367C7D2AC2AEAB002E2839 /* SelectPartViewController */,
 				D7367C7E2AC2AED8002E2839 /* QuizViewController */,
-				D7367C7F2AC2AF0A002E2839 /*  ScoreViewController */,
+				D7367C7F2AC2AF0A002E2839 /* ScoreViewController */,
 				D7629FB12AD7CE8E002D44E7 /* Utility */,
 				D7320A7A2A137D91000D605C /* AppDelegate.swift */,
 				D7320A7C2A137D91000D605C /* SceneDelegate.swift */,
@@ -238,13 +238,13 @@
 			path = QuizViewController;
 			sourceTree = "<group>";
 		};
-		D7367C7F2AC2AF0A002E2839 /*  ScoreViewController */ = {
+		D7367C7F2AC2AF0A002E2839 /* ScoreViewController */ = {
 			isa = PBXGroup;
 			children = (
 				D7320A902A138107000D605C /* ScoreViewController.swift */,
 				D763006D2A7F70D500BD24DC /* ScoreViewController.xib */,
 			);
-			path = " ScoreViewController";
+			path = ScoreViewController;
 			sourceTree = "<group>";
 		};
 		D7629F912AD53726002D44E7 /* LogiQuizUITests */ = {

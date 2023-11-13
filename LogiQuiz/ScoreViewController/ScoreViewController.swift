@@ -12,19 +12,9 @@ final class ScoreViewController: UIViewController {
 
     @IBOutlet private weak var scoreLabel: UILabel!
     
-    @IBOutlet private weak var shareButton: UIButton! {
-        didSet {
-            shareButton.layer.borderWidth = ButtonBorder.borderWidth
-            shareButton.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
+    @IBOutlet private weak var shareButton: UIButton!
     
-    @IBOutlet private weak var returnTopButton: UIButton! {
-        didSet {
-            returnTopButton.layer.borderWidth = ButtonBorder.borderWidth
-            returnTopButton.layer.borderColor = ButtonBorder.bordercolor
-        }
-    }
+    @IBOutlet private weak var returnTopButton: UIButton!
     
     
     var correct = 0
@@ -33,6 +23,8 @@ final class ScoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        shareButton.applyStandardStyle()
+        returnTopButton.applyStandardStyle()
         scoreLabel.text = "\(questionnum)問中、\(correct)問正解！"
     }
     
