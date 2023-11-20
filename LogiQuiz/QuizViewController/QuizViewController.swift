@@ -80,15 +80,11 @@ final class QuizViewController: UIViewController {
     }
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
-        //連続タップの無効化
+        // 連続タップの無効化
         answerButton1.isEnabled = false
         answerButton2.isEnabled = false
 
         let isCorrect = quizViewModel.answerSelected(at: sender.tag - 1)
-
-        if isCorrect, let currentQuiz = quizViewModel.currentQuiz() {
-            quizViewModel.removeWrongQuiz(quizId: currentQuiz.id)
-        }
 
         // 正誤の画像を表示
         updateCorrectUI(isCorrect: isCorrect)
@@ -96,12 +92,21 @@ final class QuizViewController: UIViewController {
         playSound(isCorrect: isCorrect)
 
         // 正誤判定画像の非表示の遅延処理
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
+
             self.judgeImageView.isHidden = true
 
             // ボタンの再有効化
-            answerButton1.isEnabled = true
-            answerButton2.isEnabled = true
+            self.answerButton1.isEnabled = true
+            self.answerButton2.isEnabled = true
+
+            // UIの更新
+            if let currentQuiz = self.quizViewModel.currentQuiz() {
+                // 正解の場合、不正解リストから削除し、間違いがある場合は追加する
+                let isWrong = self.quizViewModel.wrongQuizzes.contains(currentQuiz.id)
+                self.updateUI(with: currentQuiz, isWrong: isWrong)
+            }
         }
     }
 

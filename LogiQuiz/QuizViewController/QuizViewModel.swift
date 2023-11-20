@@ -90,11 +90,13 @@ final class QuizViewModel {
 
         if isCorrect {
             state.correctCount += 1
-            removeWrongQuiz(quizId: quiz.id)
+            state.wrongQuizzes.remove(quiz.id)
+            databaseService.removeWrongQuiz(quizId: quiz.id)
         } else {
-            state.isChecked = true
-            toggleWrongQuizStatusForIncorrectAnswer()
+            state.wrongQuizzes.insert(quiz.id)
+            databaseService.saveWrongQuiz(quizId: quiz.id)
         }
+        eventHandler?(.updateUI(quiz, isWrong: !isCorrect))
 
         isCorrect ? Vibration.playcorrect() : Vibration.playincorrect()
 
@@ -108,22 +110,5 @@ final class QuizViewModel {
             }
         }
         return isCorrect
-    }
-
-    // 不正解の場合のクイズの状態をトグル
-    private func toggleWrongQuizStatusForIncorrectAnswer() {
-        if let quiz = currentQuiz() {
-            databaseService.saveWrongQuiz(quizId: quiz.id)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.state.isChecked = false
-            if let quiz = self?.currentQuiz() {
-                self?.eventHandler?(.updateUI(quiz, isWrong: false))
-            }
-        }
-    }
-
-    func removeWrongQuiz(quizId: String) {
-        databaseService.removeWrongQuiz(quizId: quizId)
     }
 }

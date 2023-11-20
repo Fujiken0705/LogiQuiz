@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class SelectPartViewController: UIViewController {
 
@@ -27,6 +28,14 @@ final class SelectPartViewController: UIViewController {
         navigationItem.title = "パートを選択"
 
         setupButtons()
+
+//        // (1)Realmインスタンスの生成
+//        let realm = try! Realm()
+//
+//        // (2)全データの削除
+//        try! realm.write {
+//            realm.deleteAll()
+//        }
     }
 
     private func setupButtons() {
