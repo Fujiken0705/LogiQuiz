@@ -27,12 +27,7 @@ final class QuizViewController: UIViewController {
             }
         }
         quizViewModel.loadCSV()
-
-        if let quiz = quizViewModel.currentQuiz() {
-            let isWrong = quizViewModel.wrongQuizzes.contains(quiz.id)
-            updateUI(with: quiz, isWrong: isWrong)
-        }
-
+        updateUIForCurrentQuiz()
         quizTextView.accessibilityIdentifier = "quizTextView"
 
     }
@@ -42,6 +37,13 @@ final class QuizViewController: UIViewController {
            let scoreViewController = segue.destination as? ScoreViewController {
             scoreViewController.correct = quizViewModel.correctCount
             scoreViewController.questionnum = quizViewModel.currentQuizIndex
+        }
+    }
+
+    private func updateUIForCurrentQuiz() {
+        if let quiz = quizViewModel.currentQuiz() {
+            let isWrong = quizViewModel.wrongQuizzes.contains(quiz.id)
+            updateUI(with: quiz, isWrong: isWrong)
         }
     }
 
@@ -62,17 +64,17 @@ final class QuizViewController: UIViewController {
     }
 
     private func updateUI(with quiz: Quiz, isWrong: Bool) {
-            quizNumberLabel.text = "問題 \(quizViewModel.currentQuizIndex + 1)"
-            quizTextView.text = quiz.title
-            answerButton1.setTitle(quiz.selections[0], for: .normal)
-            answerButton2.setTitle(quiz.selections[1], for: .normal)
+        quizNumberLabel.text = "問題 \(quizViewModel.currentQuizIndex + 1)"
+        quizTextView.text = quiz.title
+        answerButton1.setTitle(quiz.selections[0], for: .normal)
+        answerButton2.setTitle(quiz.selections[1], for: .normal)
 
-            // 現在のクイズが間違ったクイズリストに含まれているかどうかでチェックボックスの状態を更新
-            if isWrong {
-                checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
-            } else {
-                checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
-            }
+        // 現在のクイズが間違ったクイズリストに含まれているかどうかでチェックボックスの状態を更新
+        if isWrong {
+            checkBoxButton.setImage(UIImage(named: "box_checked"), for: .normal)
+        } else {
+            checkBoxButton.setImage(UIImage(named: "box_unchecked"), for: .normal)
+        }
     }
 
     @IBAction private func answerButtonTapped(_ sender: UIButton) {
