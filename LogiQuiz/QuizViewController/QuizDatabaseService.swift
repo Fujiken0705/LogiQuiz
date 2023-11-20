@@ -9,11 +9,13 @@ import RealmSwift
 
 class QuizDatabaseService {
 
+    // クイズが間違っているかどうかを確認する
     func isQuizWrong(quizId: String) -> Bool {
-        let realm = try! Realm()
+        guard let realm = try? Realm() else { return false }
         return !realm.objects(WrongQuiz.self).filter("quizid == %@", quizId).isEmpty
     }
 
+    // 間違ったクイズを保存する
     func saveWrongQuiz(quizId: String) {
         let wrongQuiz = WrongQuiz()
         wrongQuiz.quizid = quizId
@@ -28,6 +30,7 @@ class QuizDatabaseService {
         }
     }
 
+    // 間違ったクイズを削除する
     func removeWrongQuiz(quizId: String) {
         do {
             let realm = try Realm()

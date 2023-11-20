@@ -9,66 +9,48 @@ import Foundation
 
 class CsvLoader {
 
+    // CSVファイルの検索
     static func findCSVFiles() -> [String] {
-        let fileManager = FileManager.default
         guard let resourcePath = Bundle.main.resourcePath else { return [] }
+        return (try? FileManager.default.contentsOfDirectory(atPath: resourcePath).filter { $0.hasSuffix(".csv") }) ?? []
+    }
 
-        do {
-            let files = try fileManager.contentsOfDirectory(atPath: resourcePath)
-            return files.filter { $0.hasSuffix(".csv") }
-        } catch {
-            return []
+    // 指定されたモードに基づいてCSVファイルからクイズを読み込む
+    static func loadCSV(mode: QuizMode, specificQuizIds: [String]? = nil) throws -> [Quiz] {
+        switch mode {
+        case .normal(let part):
+            return try loadCSVFromFile(part: part, specificQuizIds: specificQuizIds)
+        case .review:
+            return try findCSVFiles().flatMap { file -> [Quiz] in
+                guard let partNumber = Int(file.replacingOccurrences(of: "Quiz", with: "").replacingOccurrences(of: ".csv", with: "")) else { return [] }
+                return try loadCSVFromFile(part: partNumber, specificQuizIds: specificQuizIds)
+            }
         }
     }
 
-    static func loadCSV(mode: QuizMode, specificQuizIds: [String]? = nil) throws -> [Quiz] {
-            var quizzes: [Quiz] = []
-
-            switch mode {
-            case .normal(let part):
-                quizzes = try loadCSVFromFile(part: part, specificQuizIds: specificQuizIds)
-            case .review:
-                let allCSVFiles = findCSVFiles()
-                for file in allCSVFiles {
-                    if let partNumber = Int(file.replacingOccurrences(of: "Quiz", with: "").replacingOccurrences(of: ".csv", with: "")) {
-                        quizzes += try loadCSVFromFile(part: partNumber, specificQuizIds: specificQuizIds)
-                    }
-                }
-            }
-
-            return quizzes
-    }
-    
+    // ファイルからCSVデータを読み込んでクイズオブジェクトを生成する
     static func loadCSVFromFile(part: Int, specificQuizIds: [String]? = nil) throws -> [Quiz] {
-        var quizzes: [Quiz] = []
-
         guard let filePath = Bundle.main.path(forResource: "Quiz\(part)", ofType: "csv") else {
             throw CsvLoaderError.fileNotFound
         }
 
         let csvData = try String(contentsOfFile: filePath)
-        let csvLines = csvData.components(separatedBy: .newlines)
-
-        for (index, line) in csvLines.enumerated() {
-            let components = line.components(separatedBy: ",")
-            if components.count >= 3 {
-                let title = components[0]
-                let correctIndex = (Int(components[1]) ?? 1) - 1
-                let selections = Array(components[2...])
-                let id = "p\(part)q\(index + 1)"
-
-                if let specificIds = specificQuizIds, !specificIds.contains(id) {
-                    continue
-                }
-
-                let quiz = Quiz(id: id, title: title, selections: selections, correctIndex: correctIndex)
-                quizzes.append(quiz)
-            }
+        return csvData.components(separatedBy: .newlines).enumerated().compactMap { index, line in
+            processCsvLine(line: line, part: part, index: index + 1, specificQuizIds: specificQuizIds)
         }
+    }
 
-        //map使えると良さそう、配列にどのような操作ができるか
+    // CSVの各行を処理してQuizオブジェクトを生成する
+    private static func processCsvLine(line: String, part: Int, index: Int, specificQuizIds: [String]?) -> Quiz? {
+        let components = line.components(separatedBy: ",")
+        guard components.count >= 3 else { return nil }
+        let id = "p\(part)q\(index)"
+        guard specificQuizIds?.contains(id) ?? true else { return nil }
 
-        return quizzes
+        let title = components[0]
+        let correctIndex = (Int(components[1]) ?? 1) - 1
+        let selections = Array(components[2...])
+        return Quiz(id: id, title: title, selections: selections, correctIndex: correctIndex)
     }
 }
 
