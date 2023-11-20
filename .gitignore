@@ -1,0 +1,73 @@
+## Stores meta information about folders and files
+.DS_Store
+
+## User settings
+## ファイル内のカーソル位置などの情報ファイルが格納されているディレクトリ
+xcuserdata/
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+## ソースコード管理(SCM)に関する設定ファイル
+*.xcscmblueprint
+## Xcode8以前のファイル　Xcode9以降はxcscmblueprintに含まれている
+*.xccheckout
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
+## ビルド時に生成されるバイナリやリソース
+build/
+## ビルド時に生成されるログやキャッシュなど
+DerivedData/
+## ビルドプロセス中のバックアップなどに使用
+*.moved-aside
+## ユーザー固有の設定情報
+*.pbxuser
+## 新規ユーザー用の初期設定ファイル
+!default.pbxuser
+## モード設定
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+## ビルドパースペクティブ
+*.perspectivev3
+!default.perspectivev3
+
+## Obj-C/Swift specific
+## Objective-Cのヘッダーマップ
+*.hmap
+
+## アプリのアーカイブ
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## 以下ライブラリなど
+
+# Swift Package Manager
+.build/
+
+# CocoaPods
+# Pods/
+# *.xcworkspace
+
+# Firebase
+GoogleService-Info.plist
+
+# Carthage
+Carthage/Build/
+
+# Accio dependency management
+Dependencies/
+.accio/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+iOSInjectionProject

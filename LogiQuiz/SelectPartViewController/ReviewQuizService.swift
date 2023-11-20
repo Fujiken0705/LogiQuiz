@@ -10,26 +10,35 @@ import Foundation
 
 class ReviewQuizService {
 
-    private let realm: Realm
+    private var realm: Realm?
 
-    init(realm: Realm = try! Realm()) {
-        self.realm = realm
+    init() {
+        do {
+            self.realm = try Realm()
+        } catch {
+            print("Failed to initialize Realm: \(error)")
+            self.realm = nil
+        }
     }
 
     func fetchWrongQuizzes() -> [WrongQuiz] {
+        guard let realm = realm else {
+            print("Realm is not initialized.")
+            return []
+        }
         return Array(realm.objects(WrongQuiz.self))
     }
 
     func fetchQuiz(from quizId: String) -> Quiz? {
         let parts = quizId.split(separator: "q")
         guard let part = parts.first, let index = Int(parts.last ?? "") else {
-            print("Failed to split quizId: \(quizId) into part and index")
+            print("Failed to split quizId: \(quizId)")
             return nil
         }
 
         let resourceName = "Quiz\(part.dropFirst())"
         guard let filePath = Bundle.main.path(forResource: resourceName, ofType: "csv") else {
-            print("Failed to find CSV for resource name: \(resourceName)")
+            print("CSV file not found for resource name: \(resourceName)")
             return nil
         }
 
@@ -37,7 +46,7 @@ class ReviewQuizService {
             let csvData = try String(contentsOfFile: filePath)
             let csvLines = csvData.components(separatedBy: .newlines)
             guard index <= csvLines.count else {
-                print("Index out of range for quizId: \(quizId)")
+                print("QuizId index out of range: \(quizId)")
                 return nil
             }
             let line = csvLines[index - 1]
@@ -51,11 +60,12 @@ class ReviewQuizService {
             let selections = Array(components[2...])
             return Quiz(id: quizId, title: title, selections: selections, correctIndex: correctIndex)
         } catch {
-            print("Error reading CSV for quiz id: \(quizId), error: \(error)")
+            print("Error reading CSV file for quiz id: \(quizId), error: \(error)")
             return nil
         }
     }
 }
 
+
+
 //DONE Serviceクラスを導入することで、ViewModelがデータ取得や操作の詳細から切り離される→テストが容易に？？
-// Realmのエラーハンドリングが必要？
