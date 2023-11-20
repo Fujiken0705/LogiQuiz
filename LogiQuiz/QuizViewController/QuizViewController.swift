@@ -20,6 +20,8 @@ final class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        answerButton1.applyStandardStyle()
+        answerButton2.applyStandardStyle()
         judgeImageView.isHidden = true
         quizViewModel.eventHandler = { [weak self] event in
             DispatchQueue.main.async {
